@@ -31,6 +31,9 @@ gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
+
+  gem 'rspec-rails', '~> 3.7'
+
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
