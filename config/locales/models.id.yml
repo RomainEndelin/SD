@@ -1,0 +1,76 @@
+---
+id:
+  activerecord:
+    models:
+      article: Artikel
+      discussion: Catatan
+      category: Kategori
+      comment: Komentar
+      notification: Notifikasi
+      user: Pengguna
+    attributes:
+      article:
+        title: Judul
+        content: Isi
+        description: Kepala artikel
+        author: Penulis
+        city: Kota
+        country: Negara
+        status: Status
+        location: Lokasi
+        image: Gambar utama
+        picture: Gambar utama
+        categories: Kategori
+        discussions: Catatan
+        comments: Komentar
+        updated_at: Diperbarui
+        created_at: Dibuat
+        published_at: Diterbitkan
+        popularity: Popularitas
+      discussion:
+        content: Isi
+        active: Dibolehkan?
+        article: Artikle
+        author: Penulis
+        created_at: Dibuat
+      comment:
+        content: Isi
+        author: Penulis
+        article: Artikle
+        created_at: Dibuat
+      category:
+        name: Nama
+        active: Dibolehkan?
+        articles: Artikel
+        created_at: Dibuat
+      notification:
+        message: Notifikasi
+        new: Baru
+        notification_type: Tipe notifikasi
+        created_at: Dibuat
+      user:
+        name: Nama
+        website: Web pribadi
+        email: Email
+        location: Lokasi
+        city: Kota
+        country: Negara
+        created_at: Dibuat
+        biography: Biografi
+        avatar: Gambar Profil
+        background_picture: Gambar latar belakang
+        status: Status
+        comments: Komentar
+        articles: Artikel
+        notification_article_status: Notifikasi artikel dirubah
+        notification_new_user: Notifikasi pengguna baru
+        notification_new_discussion: Notifikasi catatan baru
+        notification_new_comment: Notifikasi komentar baru
+    values:
+      article:
+        status:
+          published: Diterbitkan
+          submitted: Disubmit
+          draft: Coretan
+          rejected: Ditolak
+          rework: Dikoreksi

@@ -29,6 +29,11 @@ gem 'turbolinks', '~> 5'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'file_validators'
+
+gem 'countries'
+
+gem 'devise'
 
 group :development, :test do
   gem 'pry'
@@ -37,6 +42,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'timecop'
 
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
@@ -44,6 +50,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'brakeman',           require: false
   gem 'bundler-audit',      require: false
 end

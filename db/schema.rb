@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531223326) do
+ActiveRecord::Schema.define(version: 20180310115318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170531223326) do
     t.datetime "published_at"
     t.text "description"
     t.integer "popularity", default: 0
+    t.string "derived_location"
     t.index ["author_id"], name: "index_articles_on_author_id"
   end
 

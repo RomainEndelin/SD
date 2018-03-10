@@ -1,0 +1,118 @@
+---
+en:
+  menu:
+    index: Index
+    admin: Admin Dashboard
+    dashboard: Dashboard
+    settings: Settings
+    new_article: Write an article
+    about: About
+    logout: Log out
+    login: Sign in
+    signup: Sign up
+    subtitle: Media Perantau Indonesia
+    profile: Profile
+    profile_tab: Profile
+    password_tab: Password
+    notification_tab: Notifications
+    notifications: Notifications
+  title:
+    new_article: New Article
+    edit_article: Edit Article
+    preview_article: Preview Article
+    confirm_address: Confirm email
+    forgot_password: Forgot your Password
+    edit_profile: Edit profile
+    sign_up: Sign up
+    sign_in: Sign in
+    resend_unlock_instructions: Resend Unlock Instructions
+    about: About
+    dashboard: Dashboard
+  filters:
+    search: Search title, place, author...
+    most_recent: Most recent
+    most_popular: Most popular
+    order_by: Order by...
+    category: Category...
+  footer:
+    maintainer: Maintained by Dini Kusmana Massabuau
+  flash:
+    must_login_html: Please %{href_login} or %{href_signup} before posting a comment.
+    no_article_in_dashboard: "You don't have written any article yet"
+    no_article: "No article yet"
+    no_bio: This user did not provide any bio.
+    authenticate: You need to register before writing an article.
+    admin_authenticate: You need to be administrator.
+    article_submitted: Thank you. Your article has been submitted! We will review it soon.
+    article_published: Your article has been published.
+    article_already_published: You cannot edit a published article.
+    article_saved: Your article has been saved as draft. You can now edit it from your Dashboard.
+    draft_updated: Draft updated.
+    unauthorized_edit_published_article: You are not authorized to modify an article that is already published.
+    comment_success: Your comment was successfully posted.
+    comment_error: Sorry, your comment could not be sent.
+    comment_deleted: Comment deleted.
+    notification_deleted: Notification deleted.
+    discussion_success: Thank you, your note has been successfully sent.
+    discussion_error: Sorry, your note could not be sent.
+  action:
+    edit: Edit
+    edit_article: Edit Article
+    delete: Delete
+    delete_draft: Delete this draft
+    view: View
+    preview: Preview
+    save: Save
+    search: Search
+    read_more: Read More
+    attach_note: Attach a note
+    new_comment: Comment this article
+    publish_comment: Publish comment
+    publish_note: Send note
+    enable: Enable
+    disable: Disable
+    dismiss: Dismiss
+    dismiss_all: Dismiss all
+    mark_as_read: Mark as read
+    mark_all_read: Mark all as read
+    submit: Submit
+    resubmit: Resubmit
+    save_draft: Save draft
+    back_to_draft: Back to draft
+    accept: Accept
+    reject: Reject
+    rework:
+      short: Rework
+      long: Ask Rework
+  confirm:
+    delete: Are you sure you want to delete this?
+    delete_comment: Are you sure you want to delete this comment?
+    delete_category: Are you really sure you want to delete this category? You may disable it.
+    delete_draft: "Are you sure you want to delete this draft? (this can not be undone)"
+  misc:
+    select_categories: Select categories
+    write_article: Write an article
+    moderator_note: Note for the moderator
+    back_to_edit: Back to edit
+    my_articles: My articles
+    member_since: Member since %{date}
+    articles_from: "Articles from %{author}:"
+    suggestions: Suggestions
+    no_related_article: "No related articles"
+    no_article_found: "No article found"
+    picture_warning: Please prefer horizontal pictures
+  notification:
+    new: "new"
+    new_user_created: "A new user has registered: %{name}"
+    new_discussion_written: "A new discussion has been written on article \"%{article}\""
+    new_comment_written: "A new comment has been written by %{author} on article \"%{article}\""
+    article_rejected: "Your article \"%{article}\" has been rejected"
+    article_accepted: "Your article \"%{article}\" has been published"
+    article_rework: "Your article \"%{article}\" needs to be reworked"
+    article_submitted: "The article \"%{article}\" has been submitted"
+    article_withdrawn: "The article \"%{article}\" has been withdrawn"
+    article_deleted: "The article \"%{article}\" has been deleted"
+  email:
+    greetings: "Hi %{name}"
+    view: "View in Surat Dunia"
+    thanks: "Thanks!"

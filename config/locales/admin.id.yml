@@ -1,0 +1,39 @@
+---
+id:
+  active_admin:
+    batch_actions:
+      labels:
+        dismiss: Hapus
+        mark_read: Dibaca
+        confirm_user: Dikonfirmasi pengguna
+  admin:
+    scope:
+      article:
+        drafts: Coretan saya
+        all: Semua
+        submitted: Dalam proses persetujuan
+        published: Diterbitkan
+        rejected: Ditolak
+        rework: Dikoreksi
+      category:
+        all: Semua
+        active: Dibolehkan
+        inactive: Belum diperbolehkan
+      user:
+        all: Semua
+        admin: Admin
+        user: Pengguna
+        author: Pemilik
+        unconfirmed: Belum dikonfirmasi
+      notification:
+        all: Semua
+        new: Baru
+    rank: Dibaca
+    menu:
+      details: Rincian
+      new_notifications: Notifikasi baru
+      recent_articles: Kirim kembali article
+    form:
+      note:
+        new: "Catatan baru:"
+        submit: Kirim catatan

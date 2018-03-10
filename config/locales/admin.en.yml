@@ -1,0 +1,39 @@
+---
+en:
+  active_admin:
+    batch_actions:
+      labels:
+        dismiss: Dismiss
+        mark_read: Mark as read
+        confirm_user: Confirm user
+  admin:
+    scope:
+      article:
+        drafts: My drafts
+        all: All
+        submitted: Submitted
+        published: Published
+        rejected: Rejected
+        rework: To rework
+      category:
+        all: All
+        active: Enabled
+        inactive: Disabled
+      user:
+        all: All
+        admin: Admin
+        user: User
+        author: Author
+        unconfirmed: Unconfirmed
+      notification:
+        all: All
+        new: New
+    rank: Rank
+    menu:
+      details: Details
+      new_notifications: "New notifications (%{count})"
+      recent_articles: Recent articles
+    form:
+      note:
+        new: "New Note:"
+        submit: "Send Note"

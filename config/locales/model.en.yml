@@ -1,0 +1,13 @@
+---
+en:
+  activerecord:
+    models:
+      discussion: Note
+    attributes:
+      article:
+        city: Region
+      user:
+        notification_article_status: Receive email when an article is updated
+        notification_new_user: Receive email when a new user registers
+        notification_new_discussion: Receive email when you receive a new note
+        notification_new_comment: Receive email when a comment is written on your article

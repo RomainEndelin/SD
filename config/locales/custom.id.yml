@@ -1,0 +1,118 @@
+---
+id:
+  menu:
+    index: Beranda
+    admin: Halaman Admin
+    dashboard: Halaman
+    settings: Pengaturan
+    new_article: Menulis
+    about: Tentang Kami
+    logout: Keluar
+    login: Koneksi
+    signup: Mendaftar
+    subtitle: Media Perantau Indonesia
+    profile: Profil
+    profile_tab: Profil
+    password_tab: Password
+    notification_tab: Notifikasi
+    notifications: Notifikasi
+  title:
+    new_article: Artikel baru
+    edit_article: Ubah artikel
+    preview_article: Preview artikel
+    confirm_address: Konfirmasi email
+    forgot_password: Lupa password?
+    edit_profile: Ubah profil
+    sign_up: Mendaftar
+    sign_in: Koneksi
+    resend_unlock_instructions: Kirim ulang petunjuk konfirmasi
+    about: Tentang
+    dashboard: Halaman
+  filters:
+    search: Cari judul, tempat, penulis...
+    most_recent: Terbaru
+    most_popular: Terpopular
+    order_by: Seleksi...
+    category: Kategori...
+  footer:
+    maintainer: Dikelola oleh Dini Kusmana Massabuau
+  flash:
+    must_login_html: Silahkan %{href_login} atau %{href_signup} sebelum mengirimkan komentar.
+    no_article_in_dashboard: "Anda belum punya artikel yang sudah ditulis"
+    no_article: "Belum punya artikel"
+    no_bio: Tidak ada biografi untuk pengguna ini.
+    authenticate: Anda harus koneksi atau mendaftarkan diri sebelum menulis artikel.
+    admin_authenticate: Anda harus menjadi admin.
+    article_submitted: Terima kasih. Artikel anda sudah diterima! Kami akan segera meninjau.
+    article_published: Artikel anda sudah diterbitkan.
+    article_already_published: Artikel ini sudah diterbitkan, tidak boleh ubah.
+    article_saved: Artikel yang baru sudah disimpan menjadi coretan. bisa diubah di halaman anda.
+    draft_updated: Coretan sudah diperbarui.
+    unauthorized_edit_published_article: Anda tidak boleh memodifikasi artikel yang sudah diterbitkan.
+    comment_success: Komentar anda sudah terkirim.
+    comment_error: Maaf, komentar anda tidak dapat dikirim.
+    comment_deleted: Komentar dihapus.
+    notification_deleted: Notifikasi telah dihapus.
+    discussion_success: Terima kasih, catatan anda sudah terkirim.
+    discussion_error: Maaf, catatan anda tidak dapat dikirim.
+  action:
+    edit: Ubah
+    edit_article: Ubah Artikel
+    delete: Hapus
+    delete_draft: Hapus coretan
+    view: Lihat
+    preview: Preview
+    save: Simpan
+    search: Cari
+    read_more: Lanjutan
+    attach_note: Sisipkan catatan
+    new_comment: Komentar baru
+    publish_comment: Terbitkan komentar
+    publish_note: Kirim catatan
+    enable: Diperbolehkan
+    disable: Tidak diperbolehkan
+    dismiss: Hapus
+    dismiss_all: Hapus semua
+    mark_as_read: Telah dibaca
+    mark_all_read: Telah dibaca semua
+    submit: Publikasi
+    resubmit: Publikasi ulang
+    save_draft: Simpan artikel
+    back_to_draft: Dijadikan coretan
+    accept: Diterima
+    reject: Ditolak
+    rework:
+      short: Dikerjakan
+      long: Dikerjakan ulang
+  confirm:
+    delete: Apakah anda yakin ingin menghapus?
+    delete_comment: Apakah anda yakin ingin menghapus komentar ini?
+    delete_category: Apakah anda sangat yakin ingin menghapus kategori ini? Anda bisa tidak mengaktifkan.
+    delete_draft: "Apakah anda yakin ingin menghapus coretan ini? (ini tidak bisa dirubah)"
+  misc:
+    select_categories: Pilih kategori
+    write_article: Tulis artikel
+    moderator_note: Catatan untuk moderator
+    back_to_edit: Kembali untuk mengubah
+    my_articles: Artikel saya
+    member_since: Anggota sejak %{date}
+    articles_from: "Artikel dari %{author}:"
+    suggestions: Rekomendasi
+    no_related_article: Tidak ada artikel terkait
+    no_article_found: Artikel tidak ditemukan
+    picture_warning: Foto harap horizontal
+  notification:
+    new: baru
+    new_user_created: "Pengguna baru telah mendaftar: %{name}"
+    new_discussion_written: "Catatan baru telah ditulis untuk artikel \"%{article}\""
+    new_comment_written: "Komentar baru masuk dari %{author} untuk artikel \"%{article}\""
+    article_rejected: "Artikel \"%{article}\" ditolak"
+    article_accepted: "Artikel \"%{article}\" diterima"
+    article_rework: "Artikel \"%{article}\" dikerjakan ulang"
+    article_submitted: "Artikel \"%{article}\" telah dikirim"
+    article_withdrawn: "Artikel \"%{article}\" ditarik"
+    article_deleted: "Artikel \"%{article}\" dihapus"
+  email:
+    greetings: "Salam %{name}"
+    view: Lihat di web Surat Dunia
+    thanks: "Terimakasih"
