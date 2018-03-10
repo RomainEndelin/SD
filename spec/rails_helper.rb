@@ -7,13 +7,17 @@ require 'rspec/rails'
 
 require 'database_cleaner'
 
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+# Checks for pending migration and applies them before tests are run.
+ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  # Include Factory Girl syntax to simplify calls to factories
+  # Include Factory Bot syntax to simplify calls to factories
   config.include FactoryBot::Syntax::Methods
 
   config.infer_spec_type_from_file_location!
+  # config.include HttpResponseHelper, type: :request
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

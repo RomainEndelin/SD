@@ -33,6 +33,10 @@ gem 'file_validators'
 
 gem 'countries'
 
+gem 'graphql'
+gem 'graphql-guard'
+gem 'batch-loader'
+
 gem 'devise'
 
 group :development, :test do
@@ -43,6 +47,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'timecop'
+  gem 'rspec-graphql_matchers'
 
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'

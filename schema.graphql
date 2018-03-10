@@ -1,0 +1,4 @@
+type Query {
+  # A dummy field, useful for smoke-testing GraphQL
+  hello: String!
+}
