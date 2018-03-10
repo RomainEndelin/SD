@@ -1,11 +1,9 @@
 import React from 'react';
 
-class Main extends React.Component {
-  render() {
-    return <div>
-             Hello!
-           </div>
-  }
-}
+import Routes from "./Routes"
 
-export default Main;
+export default () => {
+  return (
+    <Routes />
+  )
+}
