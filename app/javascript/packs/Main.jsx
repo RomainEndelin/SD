@@ -1,9 +1,14 @@
 import React from 'react';
 
+import { ApolloProvider } from "react-apollo"
+
+import { apolloClient } from "./apollo"
 import Routes from "./Routes"
 
 export default () => {
   return (
-    <Routes />
+    <ApolloProvider client={apolloClient}>
+      <Routes />
+    </ApolloProvider>
   )
 }
