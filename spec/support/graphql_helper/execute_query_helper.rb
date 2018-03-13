@@ -1,5 +1,5 @@
 def execute_query(query_string, context, variables)
-  res = ExploreSchema.execute(
+  res = SuratDuniaSchema.execute(
     query_string,
     context: context,
     variables: variables
