@@ -6,6 +6,7 @@
     "apollo-boost": "^0.1.2",
     "babel-preset-react": "^6.24.1",
     "graphql": "^0.13.1",
+    "material-ui": "next",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-apollo": "^2.0.4",

@@ -4,11 +4,15 @@ import { ApolloProvider } from "react-apollo"
 
 import { apolloClient } from "./apollo"
 import Routes from "./Routes"
+import Header from "./components/Header"
 
 export default () => {
   return (
     <ApolloProvider client={apolloClient}>
-      <Routes />
+      <div>
+        <Header />
+        <Routes />
+      </div>
     </ApolloProvider>
   )
 }
