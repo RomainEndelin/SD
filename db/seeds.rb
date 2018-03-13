@@ -1,7 +1,290 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+def seed_image(file_name)
+  File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}"))
+end
+
+romain = User.create!(name: "Romain Endelin",
+                      email: "romain@endelin.fr",
+                      country: "FR",
+                      city: "Montpellier",
+                      password: "indonesiA",
+                      password_confirmation: "indonesiA",
+                      biography: "Romain likes to eat sop kambing.",
+                      avatar: seed_image("romain.jpg"),
+                      background_picture: seed_image("background.jpg"),
+                      confirmed_at: Time.now)
+
+dini = User.create!(name: "Dini Kusmana Massabuau",
+                      email: "davidini@wanadoo.fr",
+                      country: "FR",
+                      city: "Montpellier",
+                      password: "indonesiA",
+                      password_confirmation: "indonesiA",
+                      biography: "Dini is an independent journalist. She lives in Montpellier and is the author of a book.",
+                      confirmed_at: Time.now)
+
+Category.create!(name: "Food")
+Category.create!(name: "Travel")
+
+Article.create!(title: "Saint-Malo kotanya bajak laut",
+  content: %q(
+Wow....kapal pirate (bajak laut)..!! teriak Adam anak sulung kami begitu sampai di pintu gerbang kota Saint Malo.
+
+Kota Saint Malo di Bretagne memang terkenal sebagai kota bajak laut di masa kerajaan. Tapi ada bedanya. Bajak laut biasanya membajak kapal untuk merampok hartanya demi kepentingan pribadi. Sementara bajak laut Malouin (orang Saint Malo) mereka merebut kapal serta merampas hartanya untuk kepentingan raja perancis. Istilahnya mereka bekerja untuk kerajaan. Para corsaire (istilah bahasa perancisnya untuk membedakan dengan istilah bajak laut biasa) mereka diperbolehkan menggunakan kekerasan hingga membunuh awak kapal dalam aksi perampohannya, namun tindakan ini dinyatakan legal karena mereka melakukannya atas nama raja.
+
+Aneh memang tapi begitulah kenyataan. Dan penduduk Saint Malo begitu bangga dengan masa lalunya. Tapi kalau mereka disebut dirinya keturunan bajak laut, langsung merah padam mukanya karena bagi mereka istilah 'pirate dengan corsaire' memiliki perbedaan. Pirate adalah perampok identik dengan kejahatan dan corsaire adalah prajurit kerajaan. Meskipun bagi saya intinya sama saja, sama-sama merampok.
+
+Bajak laut kerajaan ini tidak sembarang merampas kapal laut. Kapal laut yang berhubungan dengan kerajaan dilarang disentuh namun kapal asing terutama inggris menjadi sasaran utama.
+
+Sebelum memasuki pintu gerbang kota tua Saint Malo, kota yang dikelilingi oleh pelabuhan ini, mata kita akan dipertemukan dengan kapal corsaire (bajak laut kerajaan). Begitu besar, mempesona dan yang terpenting asli. Bukan kapal buatan yang sengaja dipajang untuk turis. Tentunya kapal bajak laut ini sudah mengalami renovasi agar lebih indah dipandang mata dan juga menunjukan bagaimana aslinya ketika kapal-kapal kerajaan itu berlayar di samudra yang diisi oleh para pembajak kerajaan yang siap bertempur merampas kapal dan harta kapal lain.
+
+Bila ingin lebih mengenal dari dekat kita bisa melihat hingga ke dalam kapal laut, namun tentunya harus merogoh kantung terlebih dahulu. Sayangnya saya lupa berapa euros yang saya sudah keluarkan untuk kami, yang saya ingat lumayan mahal. Tapi melihat anak-anak begitu bersemangat hingga tak berhenti berteriak 'wahhhh...wow....olala...' uang yang kami keluarkan menjadi tak terlalu berarti, buktinya saya sampai lupa berapa harga tiket masuk.
+
+Puas menjelajahi kapal corsaire, saatnya bagi kami berempat mengunjungi kota tua Saint Malo yang selalu didatangi turis mancanegara lebih dari 200.000 di musim panas. Setelah mendatangi kantor turis informasi mulailah kami berjalan kaki menyelusuri Saint Malo.
+
+Sepertinya angket yang menyatakan jika musim panas kota bajak laut ini banjir manusia tepat adanya. Karena saat kami datang, bertepatan dengan pasar kota sehingga di hari biasa saja kota ini sudah padat dengan turis ditambah dengan pasar kota yang diadakan setiap jumat lengkaplah sudah pandangan kami hanya dipenuhi oleh orang-orang yang berlalu lalang.
+
+Butik dan restoran di kanan kiri sepanjang jalan memang tak terlalu enak untuk berjalan kaki bila yang dicari adalah kenyamanan menyibak pesona kotanya. Kota ini memang surga bagi mereka yang mencari oleh-oleh. Karena dari mulai makanan khas setempat hingga barang kerajinan di sini kita bisa menemukan dengan mudah.
+
+Akhirnya kami memutuskan untuk ikutan seperti turis lainnya, membeli sedikit cendera mata bagi keluarga. Apa saja yang bisa dibawa sebagai oleh-oleh? Yang utama adalah ikan sardin!! Benar kota Bretagne terkenal dengan ikan sardinnya. Ikan sardin yang disajikan dalam kemasan kaleng sangat menarik ini laris manis bukan main. Padahal harga yang ditawarkan bisa tiga kali lipat dari harga ikan sardin yang ada di supermarket biasa. Namun kemasan cantik dan katanya nih, ikan sardin dari Bretagne khususnya dari Saint Malo nikmatnya tak ada duanya.
+
+Memang benar, toko yang menjual ikan kalengan yang saya datangi, membuat saya jadi panik! Padahal saya sama sekali tak suka ikan sardin kalengan, tapi melihat bagaimana ikan kecil-kecil ini masuk dalam kaleng berwarna-warni membuat pengunjung yang tadinya hanya melihat-lihat pastilah akan membeli barang satu atau dua kaleng karena terayu dengan tataan apik dari kaleng-kaleng cantik yang terpajang, contohnya saya ini.
+
+Tadinya hanya mau lihat-lihat saja, yang ada keluar dari toko bukan lagi satu kaleng tapi satu kantong besar berisi kalengan sardin dan juga kalengan dari makanan laut lainnya. Dan Adam anak sulung kami pakai acara ikutan ribut ingin mencicipi ikan sardin tanpa duri khusus untuk anak-anak. Padahal selama ini setiap kali ayahnya menawarkan ikan sardin dirinya malah menjulurkan lidah karena tak suka...
+
+Boleh dibilang hingga jam makan siang perjalanan kami hanya diisi dengan berbelanja ria. Karena lusa kami sudah harus meninggalkan kota Bretagne maka kami pakai juga kesempatan di kota ini untuk membeli beberapa souvenir untuk keluarga dan tentunya kami sendiri. Saya membeli dua miniatur mercu suar untuk di rumah kami di Jakarta. Adam dan Bazile membeli kapal bajak laut dan yang tak ketinggalan adalah magnet khas kota sini untuk lebih meramaikan pintu lemari es kami yang sudah padat dengan magnet dari berbagai penjuru negara dan kota.
+
+Waktu sudah menunjukan pukul satu siang. Anak-anak mulai merengek kelaparan. Satu persatu restoran kami datangi. Jangan kaget melihat harganya yang bikin kesal, mahal! Kami bermaksud untuk menikmati kerang laut yang sangat terkenal di kota Saint Malo. Di kota saya Montpellier misalnya, bila berbelanja di supermarket maka kerang laut dari kota Saint Malo inilah yang menjadi jaminan mutu. Karena rasanya sangat gurih, hanya direbus saja sudah nikmat sekali.
+
+Tapi justru di Saint Malo ini kami kesusahan mencari makanan. Karena banyak restoran yang sudah penuh dipesan sejak pagi hari. Salah kami memang, begitu sampai harusnya memesan tempat di salah satu restoran, jadi tidak usah seperti saat itu, keliling kota hanya mencari tempat makan.
+
+Tanpa sengaja kami melihat diujung jalan buntu sebuah papan restoran terpampang. Kami datangi, ternyata sebuah restoran kecil dengan dekorasi lucu yaitu berbagai miniatur tokoh dalam film dan komik. Dan terdapat sebuah lemari buku penuh dengan komik bacaan bagi pengunjung restoran. Nasib untung, masih terdapat tempat bagi kami dan menu yang ditawarkan tak terlalu mahal, apalagi memang saat itu menunya adalah kerang laut serta kentang goreng seperti yang kami incar sejak tadi.
+
+Selama kami makan, terus terang kami tak bisa menyembunyikan rasa nikmat dari kerang yang masuk ke mulut kami. Hemmmmm begitu gurih..c'est très bon! (enak sekali). Anak-anak kami sampai lahap benar menyantap makan siangnya. Apalagi mereka merasa begitu nyaman berada di restoran dengan dekorasi yang menyenangkan. Dan makanan penutup yang kami pesan yaitu crepe dengan mentega gula ciri khas Bretagne, membuat acara makan siang kami menjadi sempurna. Saking enaknya sampai saat ini saya masih ingat benar nama restoran kecil itu, yaitu Quai des Crêpes. Dan tepat di seberang restoran itu terdapat sebuah toko yang menjual mentega tradisional khas Bretagne. Di dalam toko tersebut kita bisa melihat bagaimana mereka mengolah mentega serta peralatan sejak jaman dulu terpanjang lengkap dengan informasinya, dan pengunjung tak dikenakan biaya apapun, kecuali bila membeli mentega...
+
+Kini saatnya menyibak dari dekat kota Saint Malo. Kota ini menyandang nama dari seorang pendeta yang bernama Mac low. Pendeta Mac Low yang kemudian menjadi uskup inilah yang membuat kota yang dulunya bernama Aleth menjadi terkenal berkat jalinan kemanusiaan. Di tahun 1944 akibat perang, kota Saint Malo mengalami kehancuran hingga 80 persen, hampir seluruhnya bisa dikatakan. Dan kemudian dibangun ulang kembali. Maka banyak yang berkata bila kota Saint Malo tak lagi asli. Biarpun boleh dibilang kota ini merupakan kota ulangan namun tak menghilangkan pesonanya.
+
+Kota yang berada di Bretagne ini sangat terkenal dengan sejarah pelayarannya. Menjadi salah satu pelabuhan penting bagi para nelayan, perdagangan dunia dan juga sebagai pusat untuk perjalanan wisata. Kota pelabuhan ini dikelilingi oleh benteng raksasa. Selain berfungsi untuk melindungi dimasa perang, juga karena kota ini selalu dilandai oleh badai lautan dari pasang surutnya samudra yang kerap menerjang kota ini dengan tajamnya. Berkat pasang surut yang sangat mencolok inilah tenaga listrik pertama kali dibangun di kota ini.
+
+Setiap 6 jam, kita bisa melihat perubahan dari pasang surut samudra atlantik. Bagaimana pantai berpasir bisa kita jelajahi dengan kaki lalu beberapa jam kemudian pantai tak nampak lagi karena tertutup oleh air laut.
+
+Pemandangan ini saya lihat bagaikan sebuah pertunjukan alam. Saat kami berada di atas benteng yang dikelilingi oleh tembok raksasa, dari kejauhan saya dikejutkan oleh sebuah kolam renang raksasa dari alam terbangun menyatu dengan lautan begitu mempesona. Saat itu air laut mulai pasang maka kami bisa melihat dengan jelas bagaimana kolam renang raksasa itu yang tadinya terlihat jalanan kecil menuju papan luncur mulai tenggelam dan akhirnya kolam renang alam itu menyatu sepenuhnya dengan lautan. Sayang sekali, kami tak membawa perlengkapan renang kami dan udara bagi kami saat itu cukup dingin tapi bagi penduduk mereka yang berada di Perancis utara, udara saat itu terbilang panas.
+
+Sepanjang tembok raksasa ini berbagai patung peninggalan bersejarah akan kita jumpai. Di Saint Malo tak hanya satu benteng yang bisa kita jumpai terdapat beberap benteng. Namun sayangnya tergantung kepada pasang surut air laut. Bila sedang surut tentu saja dengan mudah kita bisa mencapai benteng lainnya menjorok kelautan. Saat itu air sedang naik maka kami tak bisa melihat benteng lainnya. Hanya benteng Le Bastion Saint Louis yang bisa kami kunjungi, itupun sudah sangat besar.
+
+Menyelusuri benteng yang dikelilingi tembok raksasa dan melihat kejauhan dimana samudra membentang luas, seolah diri ini bagaikan raksasa yang dikelilingi oleh miniatur. Bila sejak tadi kami merasa sedikit sesak oleh lautan manusia di tengah kota kini kami bisa menghirup udara segar lautan dan mata kami akan diteduhkan oleh birunya air laut yang berkilau terkena pantulan matahari.
+
+Terasa begitu relaks diri ini. Tak heran bila kota ini terdapat begitu banyak spa air laut yang konon kabarnya sangat manjur untuk melenturkan kembali tubuh. Dan memang kebanyakan dari golongan jet set yang sengaja datang ke kota ini guna berlibur sambil merelakskan badan guna mendapatkan kembali kesegaran tubuh.
+
+Kami sendiri tak butuh spa, karena hanya melihat dan menghirup udara segar dari samudra atlantik sudah membuat kami merasa santai dan segar. Liburan kami ke Bretagne ternyata menghasilkan banyak hal positif bagi kami. Selain pengetahuan dan pengalaman bertambah juga di sini badan serta jiwa kami menjadi segar.
+),
+  description: "Saint-Malo...",
+  author: romain,
+  picture: seed_image("saint_malo.jpg"),
+  city: "Saint-Malo",
+  country: "FR",
+  status: "published"
+)
+
+Article.create!(title: "Monaco, si kecil yang kaya raya",
+  content: %q(
+Monaco, identik dengan kerajaan, di mana bintang Hollywood nan menawan Grace Kelly, disunting Pangeran Rainer III, di bawa ke negaranya menjadi permaisurinya, layaknya sebuah film. Dan bagaikan dalam sebuah cerita, sang putri tewas dengan mengenaskan membawa duka bagi rakyatnya, menjadi legenda bagi negara itu sendiri, Monaco.
+Sebenarnya Monaco tidak terlalu jauh dari tempat saya tinggal, sekitar 4 jam sudah sampai, tapi entah kenapa, suami saya si akang ini, emoh sekali tiap diajak mengunjunginya. Dia pernah ke Monaco, dan katanya ‘Monaco itu kecilll banget, nggak ada yang dilihat kecuali kehidupan serba mewahnya’. Bisa dimengerti, suami saya ini, lebih nyaman berada dalam sebuah tempat penuh dengan keindahan alam, dikelilingi oleh kesenian dan kehidupan manusianya yang lebih teradisional.
+Tapi, rasanya sayang benar, kalau saya yang saat itu sedang berbulan madu (untuk yang ke sekian kalinya dengan suami hehe) tidak menyapa Monaco yang hanya 20 menit dari tempat kami berlibur di Nice, Côte d’Azur.
+Jadilah akhirnya, kami berdua mengunjungi Monaco setelah diskusi panjang. Saya sendiri lebih ke arah penasaran, kenapa ? Karena setiap minggu saya berlangganan majalah wanita, selalu saja isinya sampai sampul depannya, itu berbicara mengenai keluarga kerajaan Monaco. Belum lagi, pesta-pesta jet-set nya. Rally Monte Carlo yang terkenal. Di film James Bond biasanya terselip adegan dimana si agen ganteng 007 sedang melakukan penyelidikan di sebuah casino terkemuka di Monte Carlo, Monaco. Garis besarnya, kota yang katanya hanya seluas Cibubur itu (kata ibu saya yang pernah mendatanginya) kok bisa masyur benar ya namanya, dan begitu terkenal sebagai negara kaya raya.
+Kami berdua datang ke Monaco dengan mobil. Sengaja kami menuju Monaco tidak melewati jalan TOL, karena berdasarkan saran orang tua David, suami saya itu, sebaiknya lewat jalan nasional, di mana pemandangan yang tersajikan lebih indah, karena lautanlah yang akan mengiringi kami hingga menuju Monaco. Memang benar, dari Nice, pemandangan lautan yang berwarna biru azur begitu memukau, kamipun melewati kota kecil yang bernama Eze, kota yang cantik dengan turisnya dari mancanegara. Hingga membuat kami, akhirnya memutuskan untuk berhenti, dan mengunjunginya untuk beberapa jam, karena jatuh hati saat melewati kota itu.
+Namun saat mobil kami memasuki kota Moncao kesan biasa-biasa saja yang saya rasakan. Jejeren apartemen layaknya kota-kota di Eropa yang menjadi pemandangan perjumpaan kami. Semakin mendekati kota, semakin banyak kami kami dilewati oleh mobil mewah. Pertamanya, kami sedikit berdecak, karena mobil Rolls Royce rasanya belum pernah saya jumpai di Montpellier, kota saya tinggal. Tapi makin memasuki Monaco, mobil Porsche, Bentley, Ferarri, Rolls Royce dan masih banyak jenis mobil lux lainnya, parkir di mana-mana atau melaju layaknya jumlah mobil merk prancis di kota saya tinggal.
+Setelah menemukan tempat parkir yang lumayan mahal perjam-nya, kami mencoba menikmati isi dari kota Monaco. Kamipun berdua berjalan perlahan, arah yang pertama kami coba lalui adalah taman. Memang kabarnya, kecil-kecil begini, kota Monaco penduduk dan pemerintahannya, sangat mencintai taman. Beberapa taman bisa dikunjungi secara gratis, yaitu Jardin Saint Martin, Le Jardin Japonais, Le Parc Princesse Antoinette dan Le Parc paysages de Fontvieille et la Roseraie Princesse Grace. Sayangnya yang terakhir ini, sedang direnovasi hingga juni 2014 sehingga tak memungkinkan kami untuk mengunjungi taman mawar yang diperuntukan untuk Putri Grace.
+Saat kami mendatangi Monaco, kami memang beruntung, di awal bulan november, matahari bersinar dengan hangat, bahkan orang-orang terpaksa melepaskan jaket mereka karena kepanasan, suhu saat itu mencapai hingga 26 derajat.
+Lumayan unik taman yang kami datangi, jangan menyamakan dengan taman prancis, yang amat sangat unik bagi kastil-kastilnya. Beberapa taman yang saya datangi di negara monarki ini, lebih mengarah kepada jalan-jalan santai sambil melihat kolam ikan, patung, air mancur, lalu taman jepang (Le Jardin Japonais) yang saya datangi juga unik benar, karena tiba-tiba saja saya serasa sedang berada di Jepang dan bukan lagi di Monaco.
+Tapi yang membuat saya tertarik adalah, dari sisi taman les Jardin Saint Martin, taman yang berada di atas, memungkin kita melihat sisi Monaco yang berada di Côte d’Azur menjorok dipertemukan oleh lautan biru azur, dengan kapal-kapal pesiar. Sementara, kota yang hanya seluas 2.02km2 dengan penduduk yang lumayan padat sekitar 37 ribu, bagaikan disanggah oleh batu karang raksasa.
+Negara yang sejak 6 april 2005 dipimpin oleh Pangeran Albert II de Monaco anak dari Pangeran Rainer dan Grace Kelly yang tahun 2013 ini memiliki kekayaan sebesar 1milyar euros ini, berada di Côte d’Azur, diapait oleh empat kota prancis, namun merupakan negara dengan pemerintahan sendiri. Saking kecilnya, menjadi negara kedua terkecil di dunia. Monaco yang terkenal tempat para jutawan menyimpang uang mereka di sini karena rendahnya pajak, tak bisa memiliki airport karena luas negaranya yang tak memungkinkan, hingga mereka yang ingin mendatanginya dengan pesawat harus mendarat di Nice, Prancis.
+Setelah menenangkan hati si akang dengan mengunjungi taman-taman, kami mulai menyusuri kota yang menggunakan bahasa prancis sebagai bahasa nasionalnya.
+Dalam kota, rupanya sangat padat dengan wisawatan ! kereta kecil pengangkut turis berwarna merah melaju dengan para penumpang yang sibuk mengambil gambar dengan kamera mereka. Rombongan turis, dengan pemandunya dari beberapa negara. Heran memang kecil-kecil kok banjir wisatawan. Dan yang membuat terkejut saat sebuah rombongan melewati kami, kuping saya serasa tersengat, karena bahasa pengantar yang digunakan, bahasa indonesia. Spontan saya teriak ke suami saya, ada rombongan indonesia.. ! rombongan indonesia… !
+Benar saja, mereka rombongan wisatawan dari Indonesia yang sedang berlibur dengan menggunakan tour travel ke beberapa negara, salah satunya Monaco. Karena waktu mereka terbatas dengan jadwal kunjungan ke tempat wisata, kami tak sempat ngobrol banyak, hanya saya titipkan saja kartu nama saya, jaga-jaga siapa tahu suatu saat mereka ingin mengenal kota Montpellier tempat kami tinggal, pintu rumah kami selalu terbuka.
+Dan diri ini akhirnya berhadapan dengan istana Monaco ! Sebuah istana yang membuat saya membaca kisah sejarah Monaco. Bercerita mengenai Monaco, berarti kembali ke abad 13, di mana saat itu koloni Genoa yang dipimpin oleh Fulco del Cassello, meletakan batu pertamanya untuk pondasi sebuah benteng pertahanan di atas sebuah bukit yang saat ini digunakan sebagai istana pangeran.
+Istana yang pada awalnya adalah benteng pertahanan ini telah melewati banyak saksi sejarah perjuangan dalam menghadapi bombardir musuh. Sejak akhir abad ke 13 telah menjadi tempat tinggal keturunan Grimaldi yang saat itu menjadi tuan tanah dan memegang kekuasaan sebagai pangeran setempat.
+Selama kurun waktu abad ke 19 hingga awal abad 20 istana yang memiliki gaya ‘Renaissance Italia’ ini, menjadi simbol kemewahan, apalagi istana yang berada di atas bukit daerah Côte d’Azur, dimana para bangsawan dan jutawan berlibur, semakin membuat istana dan penghuninya menjadi lambang glamour…
+Kemewahan itu, semakin terlihat ketika Pangeran Reiner menikahi bintang film terkenal Grace Kelly, yang mana, lewat dirinya menunjukan kehidupan kesehariannya dalam istana mewah.
+Sudah bisa dibayangkan, istana monaco tidak bisa didatangi oleh umum. Hanya dari sisi luarnya kami diperbolehkan mengambil gambar secara bebas. Di sekeliling istana, terdapat juga bangunan pemerintahan yang tentunya dijaga pula oleh prajurit kerajaan.
+Setelah puas mengabadikan gambar bangunan kerajaan, kamipun mulai melanjutkan perjalanan dengan memasuki kota tua Monaco. Warna warni, tembok bangunan membuat kota mungil itu semakin enak untuk dinikmati. Layaknya kota wisata, restoran berjejeran dengan terasnya menawarkan berbagai macam hidangan, soal harga variasi, mahal sekali ? tidak juga, namanya kota turis.
+Di sinilah saya baru terasa jika Monaco memang negara kecil, kaki ini hanya kurang dari 1 jam sudah mengitari kota tuanya, padahal entah berapa kali, saya berhenti untuk mengambil gambar dan keluar masuk butik.
+Karena menyibak kota utama sudah kami lakukan, kamipun kembali ke parkir untuk mengambil mobil menuju Monte Carlo, di mana casino terkenal berada di sana. Dalam tempat parkir, kami tertawa geli karena mobil kami berada diantara mobil mewah, yaitu Porsche, Maserati dan sebelahnya adalah Lamborgini. Setelah kami perhatikan, kami jadi semakin tertawa karena bukan hanya deretan parkir yang ada mobil kami saja terdapat mobil mewah, namun hampir satu parkir isinya mobil lux semua… !!
+Monte Carlo adalah salah satu bagian dari Monaco, di Monte Carlo inilah pusat administrasi pemerintahan berada. ‘Bau uang ya ?’ kata suami saya saat mulai mencari parkir di daerah ini. Memang terlihat benar kehidupan jet set di daerah ini. Bagaimana tidak, sepanjang jalanan berparkiran lagi-lagi mobil lux, pokoknya saya baru kali ini lihat sebuah kota kurcaci istilahnya tapi isinya mobil-mobil besar nan mewah, berjejeran dengan para supirnya menunggu majikannya. Butik-butik merk terkenal juga menjadi tontonan mata…mengertilah saya, jika si akang kurang suka hehehe.
+Usai memarkirkan mobil kami, seperti sebelumnya diantara mobil super bermerk, kami langsung menuju Casino Monte Carlo. Bukan untuk main judi ya, tapi tempat ini, memang menjadi salah satu tujuan wisata juga.
+Kamera wajib diserahkan kepada petugas, larangan keras mengambil gambar dengan cara apapun. Benar ketika memasuki ruangan casino, rasanya diri ini sedang dipelototi oleh kamera dari segala arah.
+Berbagai jenis permainan ditawarkan kepada pengunjung, ada yang mulai dari 5euros juga loh, malah ada yang pakai koin mulai dari 2euros. Kami hanya melihat-lihat, mengamati para pemain yang mencoba mengadu nasib. Ada permainan yang harus menukarkan dulu uang dengan koin khusus, ada yang bisa langsung memberikan uang kepada setiap permainan.
+Suami saya mengajak kami melihat permainan poker. Para pemarin memang kelihatan kebanyakan sudah terbiasa dikelilingi oleh orang-orang khususnya turis-turis yang penasaran seperti saya. Seorang pemuda datang menggantikan pemain yang pergi meninggalkan meja, dilihat dari usia sih sekitar 20 tahun tak lebih, dengan tenangnya dia mengeluarkan dua lembar uang 500 euros untuk memulai permainan. Saya cuma bisa berbisik kepada suami saya, ‘aduhhh itu kan harga 1 tiket pesawat kita mudik ya ke Indonesia….’.
+Suami saya mengajak kami berdua menikmati kopi di sebuah cafe dalam casino dan bukan di barnya karena dia tahu saya tak suka. Tapi saat kami melihat ternyata untuk masuk saja kudu bayar 15euros, langsung malas jadinya. Belum lagi pakai persyaratan yaitu meninggalkan kartu identitas diri. Halah lebay banget sih pikir saya….tapi ternyata memang begitu peraturannya, karena mereka yang masuk ke dalam cafe restoran itu, menginginkan ketenangan dan kenyamanan.
+Kamipun memilih untuk menikmati kopi hitam kami di luar casino, karena kenyamanan kami justru saat menyatu dengan masyarakat, mendengarkan berbagai bahasa, dengan atap langit terbuka dan matahari menjadi teman penghangat kulit kami.
+Monaco……kenangan unik.
+),
+  description: "Monaco...",
+  author: romain,
+  picture: seed_image('monaco.jpg'),
+  city: "Monaco",
+  country: "MC",
+  status: "published"
+)
+
+Article.create!(title: "Batu menhir pahatan Obelix banyak sekali",
+  content: %q(
+  "AGI penggemar cerita Asterix tentunya, mengenal betul kegemaran Obelix sahabat Asterix yang berbadan raksasa itu, memahat batu menjadi menhir, dan memberikannya sebagai kado. Batu yang besar dan berat itu dengan tenangnya dibawa Obelik bagaikan membopong anjing kecilnya, Idefix.
+
+Akhir bulan Agustus lalu, untuk mengakhiri liburan sekolah musim panas anak-anak kami, daerah Lozère yang kami pilih selama 3 malam. Tak terlalu lama memang, tapi cukup untuk membuat Adam dan Bazile, bisa bersemangat kembali ke sekolah setelah 2 bulan liburan yang sudah kami isi juga dengan liburan di beberapa tempat (mungkin nanti akan keluar juga dalam catatan perjalanan saya di sini).
+
+Mengapa Lozère? Jawabannya, 11 tahun yang lalu kami pernah juga berlibur di daerah ini. Saat itu anak sulung kami Adam baru berusia 3 tahun, dan kami ingin mengulangi kenangan indah itu kali ini berempat dengan si bungsu Bazile. Bila dulu kami memilih bercamping ria, kali ini, Kang Dadang, alias David, yang memang tak menyukai camping, lebih memilih rumah unik sebagai tempat kami menginap.
+ 
+Setelah mencari selama beberapa hari, dapatlah sebuah rumah kampung di desa Saint Étienne du Valdonnez-Lozère. Sebuah rumah bekas tempat peternakan sapi perah yang direnovasi menjadi tempat penginapan. Bayangkan, saat kami membaca iklan yang ditulis oleh pemiliknya dalam sebuah site penginapan, rasanya penasaran sekali. Dan pemandangan yang dijanjikan adalah gunung dari jendela rumah. Harga penyewaan rumah bertingkat dengan dua kamar besar itu, hanya 55 euros per malamnya. Harga itu rasanya hampir sulit didapati saat ini.
+
+Jumat pagi kami langsung menuju Saint Etienne du Valdonnez. Ada rasa ketir di hati, karena ramalan cuaca menyatakan selama tiga hari itu cuaca tak akan baik. Hujan dan angin. Tapi apa boleh buat, penyewaan sudah kami bayar, dan janji kepada anak-anak sudah terlanjur terucap. Sepanjang menuju ke sana, langit memang abu-abu, dan udara dingin di musim panas, lumayan membuat kami terpaksa menggunakan baju hangat tebal. Malang nasib kami, tiba-tiba saja hujan mengguyur deras. Ahhhh, kami kecewa sekali...
+
+Semakin jauh mobil kami melaju memasuki daerah Lozère, hujan mulai berhenti, dan matahari mulai nampak. Ada harapan buat kami agar matahari tak kabur lagi terusir oleh hujan. Namun untuk piknik, rasanya belum memungkinkan, rumput-rumput masih terlihat basah dan lembab. Sudah tanggung, dalam beberapa waktu kami sudah akan sampai di tujuan. Mobil kami memasuki desa yang akan kami inapi selama tiga malam, sepi sekali. Begitulah kebanyakan desa di Perancis, kadang di siang hari bagaikan kota tak berpenghuni.
+
+Sesuai petunjuk yang diberikan pemilik penginapan, kami mendapatkan rumah yang kami sewa dengan mudah. Dari tampak luar, tak ada kesan bahwa dulunya tempat ini adalah bekas pemerahan sapi. Hanya bangunan kuno sederhana, di tembok pintu terukir tahun rumah ini dibangun 1876. Wow!
+ 
+Pemilik mengatakan rumah yang kami sewa tak dikunci, jadi kami bisa langsung masuk, kunci rumah ia tinggalkan di atas meja makan. Ajaib benar, saat dia berujar di telepon menerangkan hal tersebut. Biarpun di desa, tetap saja, rasanya aneh bagi kami membiarkan rumah dalam keadaan terbuka, tanpa takut kemalingan.
+
+Bangunan itu bertingkat tiga rupanya, lantai pertama adalah gudang dan ruangan kerja pemiliknya. Lantai dua, barulah ruang tamu dapur dan ruang makan. Lantai tiga, dua kamar tidur besar, kamar mandi luas, dan kejutan masih ada lagi satu lantai, yaitu sebelum atap, oleh pemiliknya digunakan sebagai tempat penyimpanan barang. Ruangan yang kami boleh tempati adalah lantai dua dan tiga.
+
+Unik dan nyaman sekali keadaan dalam rumah, semuanya serba kayu dan batu. Produk makanan dan kebersihan yang ditinggalkan produk natural, ekologi dan biologi, cocok sudah dengan kebiasaan kami. Pemandangan yang dijanjikan terpenuhi dari jendela ruang tamu dan kamar adalah gunung. Saat itu kabut sedang berjalan mengelilingi gunung, mungkin akan pergi karena udara mulai semakin cerah, indah sekali.
+
+Rencana piknik pun berubah menjadi makan ayam goreng dan nasi serta sayur segar. Kalau soal nasi, kami sekeluarga memang agak sedikit berlebihan. Pergi kemana saja, kalau memang kudu makan nasi, rice cooker kami bawa pastinya, hal ini kerap membuat orang geleng kepala. Tapi sudah kebiasaan, anak-anak pun doyan sekali makan nasi enak. Di Perancis memang kadang membuat nasi hanya direbus, lalu air rebusan dibuang, dan nasi yang disaring dimakan. Tapi rasanya, eehhhh... buat lidah kami tak cocok sama sekali.
+ 
+Setelah perut terisi, waktunya buat kami menikmati jalan-jalan, sekalian membuang lemak istilahnya. Kami pun berjalan kaki berempat. Dari desa tempat kami menginap banyak sekali terdapat jalur untuk berjalan kaki secara santai. Ada yang berjarak 10 km paling dekat, itu yang kami pilih untuk pembuka liburan kami.
+
+Sepanjang jalan, udara semakin hangat, dan jalan pun semakin menanjak, berbatu. Kami mulai memasuki hutan kecil. Inilah nikmatnya berlibur menyatu dengan alam. Sungai dengan jurang dan air yang mengalir, yang menemani perjalanan kami. Bunyi aliran air, memang terasa sekali membuat hati menjadi adem.
+
+Di kanan kiri, tidak hanya serangga yang aneh-aneh yang kami temui, kupu-kupu dengan sayap seperti robek, motif mata tiga. Lalu lebah yang kegenitan, terbang dari satu bunga ke bunga lainnya. Katak berwarna merah, lompat dan kabur saat berpapasan dengan kami, karena sama-sama kaget! Dan belum lagi terhitung, berapa banyak jenis bunga yang sulit kami temui di kota. Bahkan Kang Dadang sampai dibuat terkagum saat ia menemukan anggrek liar, maklum suami saya ini adalah penggemar berat tanaman anggrek.
+
+Gara-gara kaki kami mulai terasa pegal, langkah pun mulai terasa berat, beginilah kalau sudah lama tak dibiasakan berjalan kaki menanjak. Kang Dadang mulai mencari ranting besar, buat kami berempat sebagai tongkat yang membantu kami berjalan sebagai penopang. Adam dengan bangganya meminjamkan pisau swiss serba guna miliknya kepada ayahnya untuk merapikan dan membuang ranting yang agak tajam. Lumayan, kini kami bisa berjalan kaki dengan sedikit bantuan tongkat.
+ 
+Hutan kecil yang tadinya hanya dikelilingi oleh rimbunan pohon dari kejauhan mulai terlihat cahaya cerah yang masuk. Ilalang tinggi terlihat di depan kami. Rumah-rumah batu, ciri khas rumah kuno Perancis juga mulai kelihatan. Kami keluar dari hutan, dan kini berada di tengah pelataran padang bukit hujan, luas, lebar, dan bebas...
+
+Kaget juga kami dengan pertemuan ini. Tapi suami saya tetap yakin dengan arah yang ditujunya. Kami pun dengan patuh mengikutinya, apalagi padang ilalang yang kami lewati, terselip banyak sekali bunga-bunga ‘Coquelicot’ dalam bahasa Inggris disebut, field poppy atau corn poppy. Anak-anak kami mulai berlari, kegirangan mereka.
+
+"Lihat!" Kang Dadang berseru, sambil tangannya menunjukkan sesuatu.
+
+Sebuah batu menhir terlihat, tapi rupanya tidak hanya satu, karena di sekelilingnya terdapat beberapa batu menhir lainnya. Wow, rupanya ini yang sejak tadi dikatakan oleh suami saya akan memberikan kami kejutan. Adam dan Bazile keduanya penggemar berat Asterik. Buku komik Asterik, lengkap koleksinya mereka miliki.
+
+Bazile, sampai membuat kami tertawa, karena dirinya yang berteriak heboh. Dia menyatakan tak percaya jika bisa memegang langsung peninggalan Obelix! Pengakuan yang tentu saja, semakin membuat kami bertambah geli, tapi saat itu tak tega kami untuk langsung menerangkan sejarah dari bebatuan menhir yang sedang diusapnya.
+ 
+"Bazile, ini belum seberapa, besok kita masih akan jalan-jalan lagi dan kamu akan lihat masih banyak batu menhir lainnya yang akan kamu lihat," tutur Kang Dadang alias David kepada anak bungsu kami.
+
+"Betul papa? Yakin? Tahu dari mana? Janji ya," kalimat yang tidak hanya untuk menyakinkan ayahnya jika ia keliru tapi juga meyakinkan dirinya, jika ia tidak mimpi.
+
+"Ya, betul, besok kita jalan-jalan lagi, ada menhir raksasa yang akan kita lihat, tapi kamu harus kuat jalan, karena perjalanan besok lumayan jauh," kata Kang Dadang.
+
+"Siap papa! C’est trop cool! J’arrive pas a croix, c’est plus beau jour de ma vie!" (Ini betul-betul keren, saya nggak bisa percaya, ini  hari yang paling indah dalam hidup saya).
+ 
+BANGUN pagi dengan gunung menyambut mata terbuka merupakan kemewahan bagi seseorang yang biasa hidup di kota. Dari jendela kamar, pemandangan kabut tebal yang melilit gunung, seolah ular putih yang sedang berjalan menjerat, indah sekali. Kami mendengar anak-anak pun sudah bangun, tumben si sulung sehabis shalat subuh tak kembali lagi ke kasur, meneruskan mimpi. Mungkin karena saking semangatnya meneruskan liburan hari ini. Tapi kami membiarkan mereka santai di kamar, sementara kami mulai menyiapkan sarapan pagi.
+
+Tiba-tiba bunyi klenengan ramai sekali terdengar dari kejauhan. Bukan hanya satu klenengan, tapi puluhan. Ramai sekali. Terdengar dari luar, dengan deru langkah berderap. Membuat saya dan suami melihat dari jendela. Wooowww, ternyata segerombolan biri-biri begitu banyak sedang melewati rumah penginapan kami.
+
+Adam dan Bazile rupanya sama terkejut. Bazile menjerit-jerit antara senang dan panik. Ia lari menuruni tangga agar bisa melihat dari jedela ruang tamu lebih dekat. Kami berteriak memintanya tidak membuka pintu, agar tak mengganggu domba berbulu tebal itu lewat.
+
+Gembala yang membawanya ada dua, satu dengan mobil mengikuti dari belakang, satu lagi di depan berjalan kaki. Tapi yang lucu adalah melihat anjing yang jadi gembala domba. Begitu serius. Seperti dalam film. Anjing  menggonggong, lari ke sana kemari, agar para domba selalu berada dalam satu jalur.
+
+Pagi yang menyenangkan. Belum memulai perjalanan sudah mendapat pertunjukan mengasyikkan. Hari itu kami berencana untuk piknik di pinggir sungai. Bazile penggemar Asterix, menagih janji untuk kembali melihat menhir. Tapi setelah dibujuk agar melihat menhir dilakukan esok hari saja, dan sebagai gantinya mencoba memancing ikan trout, ia langsung kegirangan.
+
+Kang Dadang (David), memiliki alat memancing warisan dari almarhum kakeknya. Kedua anak kami, sudah lama meminta agar ayah mereka memperlihatkan cara memancing di sungai. Ikan Trout di daerah ini kabarnya yang paling banyak bisa didapatkan, dan rasanya bagi yang suka, nikmat sekali. Saya kali ini asli hanya menemai mereka memancing, sampai seusia ini, masih tak tega rasanya melihat ikan yang terpancing, terkait di bibirnya, tajamnya kail, uhhhh...  Sungai Tarn, dekat Ispagnac yang kami pilih untuk piknik dan menjerat para ikan malang.
+Menuju ke daerah Ispagnac, kami sempatkan untuk mampir ke Florac, kota yang pernah di datangi Adam ketika ia berusia 3 tahun. Dulu rasanya kota ini begitu spesial bagi kami. Namun ketika kami tiba di sana, ada rasa kecewa, kesan unik yang dulu kami ingat, tak lagi sama. Mungkin tahun 2003, belum banyak kota-kota yang kami datangi di Perancis, sehingga Florac membuat kenangan tersendiri bagi kami.
+
+Kali ini, kesan gersang lebih terasa, bahkan sungai kecil, tempat dulu kami bertiga mengabadikan foto, menjadi sangat biasa dipandang. Tak lama akhirnya kami menghabiskan waktu di kota ini dan lebih memilih untuk melanjutkan piknik di pinggir sungai.
+
+Jalanan menuju Sungai Ispagnac dari Florac cukup berliku, tapi pemandangan yang dijanjikan bermutu. Banyak kota kecil, dengan kastil dan rumah tua. Bukit juga sungai. Kadang kami melewati sebuah daerah hanya dengan 4 rumah di pinggir jalan. Rasanya baru saja melewati papan yang menandakan kami masuk ke kota itu, sudah tertancap lagi papan nama kota itu dicoret. Begitu singkat dan dan irit dengan isi penduduk. Entah apakah masih ada penghuninya di rumah-rumah tersebut kami tak bisa menebak.
+
+Setelah beberapa kali, berhenti dan melihat suasana pinggir sungai, dapat juga sebuah tempat di mana kami bisa memarkirkan mobil dengan santai. Beginilah di Perancis, sebuah tempat dengan sungai bersih dan jernih, pinggiran sungai dari batu kerikil, terjaga. Seberang sungai adalah bebatuan menjulang, seperti gunung yang terbelah.
+
+Pinggiran yang kami datangi berupa dataran yang lebar memudahkan orang yang datang untuk menikmati dengan nyaman, berleha-leha. Bila ingin berenang, dengan mudah bisa menikmati air sungai yang segar. Hanya ingin berselonjoran, dengan cahaya matahari menyapu pipi, juga bisa dilakukan dengan asik. Kami di tempat yang begitu luas hanya terdiri dari dua keluarga. Tak ada sampah. Kami mencari tempat yang enak untuk bersantai dan piknik, berusaha berada jauh dari keluarga yang sudah datang lebih dahulu, agar tak menganggu.
+
+Musim panas, buah melon  berwarna oranye, menjadi buah musim. Rasanya yang manis dan segar, sangat enak sebagai pembuka. Setelah semua sampah kami masukan dalam kantung plastik untuk kami buang di tempat penginapan nanti, David mulai menyiapkan alat memancing. Anak-anak dengan semangat turut membantu ayahnya. Saya lebih senang, menyiapkan alas panjang untuk menikmati udara hangat, sambil membaca buku.
+
+Setelah setengah jam mencoba memancing, tak ada satu pun ikan Trout yang kepancing. Sempat Adam mendapatkan hasil, namun sebuah ikan kecil yang ia pancing, kasihan sekali. Ikan yang pasrah dengan nasib nyawanya, kami lepaskan. Karena mulai bosan dengan hasil yang nihil. Kang Dadang dan anak-anak akhirnya memilih untuk berenang dalam sungai. Biasanya aku turut, tapi airnya lumayan dingin saat itu, sudah enak rasanya badan dihangatkan oleh matahari, jadi malas, kesiram air. Anak-anak dan ayahnya, asyik sekali mereka berenang.
+ 
+Terdengar kadang Bazile berteriak, karena ada ikan kecil yang ikutan berenang di sampingnya. Saya memandangi mereka bertiga, kulit mereka nampaknya 10 kali lipat lebih tebal dari saya, karena air yang dingin, mereka katakan hangat.
+
+Puas bermain air dan karena sore sudah datang, waktunya bagi kami untuk melanjutkan perjalanan. Sebuah kota kecil tak jauh dari tempat kami piknik menjadi tujuan berikutnya. Sekali lagi dalam perjalanan, dari jendela mobil, dekor alam memamerkan kegagahannya. Kota Sainte Enimie, yang pernah terpilih sebagai salah satu kota tercantik di Perancis yang menjadikan kami ingin datang, sekaligus menikmati minuman hangat.
+
+Tak terlalu jauh dari Ispagnac, Sainte Enimie merupakan kota yang sangat kecil, namun menyentuh. Bangunan dari batu-batu tua, gereja kuno tanpa cahaya seperti menyimpan misteri. Kami terus berjalan. Anak-anak kelihatan menikmati, jalanan berbatu yang menanjak, masuk dalam gang sempit, menundukan kepala karena melewati sebuah terowongan yang pendek.
+
+Sampailah kami di sebuah tempat dengan panorama yang memukau. Di sini rupanya, bagi turis untuk mengambil foto kenangan, latar belakang Tarn yang menjadi dekornya.
+
+Malam harinya, kami berempat masih membicarakan perjalanan hari itu. Berbeda memang liburan kami kali ini. Tak ada museum, kunjungan sejarah seni, semuanya lebih kepada alam. Tapi yang menyolok adalah, sejak kami datang tak satu peser pun uang yang keluar dari kantung kami untuk membayar sebuah keindahan yang sudah kami dapati sejak hari pertama kami datang. Itu adalah keberuntungan.
+
+Adam dan Bazile masih tetap penasaran dengan memancing ikan trout! Kami janjikan esok sore sebelum pulang, ada danau yang kabarnya khusus untuk memancing ikan trout, namun pagi harinya, sesuai janji, kami akan kembali mendatangi menhir, Bazile senang sekali, sampai joget-joget membadut, begitulah si kecil kalau sedang girang.
+
+Malam di St. Etienne du Valdonez begitu hening, tak ada lampu jalan menyala. Memang sejak kami datang, hanya beberapa batang hidung yang kami papasi. Malam yang senyap, rasanya siapa pun akan tertidur dengan lenyap.
+ 
+Paginya, di hari ketiga berlibur, kami sudah siap menyambut gerombolan biri-biri yang akan lewat. Kali ini kameraku sudah menanti untuk mengambil gambar. Begitu suara klenengan terdengar, langsung saya coba untuk mengabadikan dalam kamera. Sayang, hasilnya tak bagus, karena gerombolan biri-biri itu berlalu sangat cepat!
+
+Untuk melihat menhir kami harus menggunakan mobil menuju daerah Bondons. Di mana terdapat banyak menhir. Kabarnya malah bertebaran. Menurut Kang Dadang, terdapat sekitar 154 menhir granit di padang sana. Namun tentu saja tidak semua yang bisa kita datangi. Ketika mendengar kata 154, saya dibuat melongo, karena biasanya kalau kita mendatangi menhir, ya paling ada satu atau dua saja. Persiapan piknik sudah masuk dalam mobil, dan kami pun menuju daerah Bondons.
+
+Benar saja, sepanjang jalan dari kejauhan pemandangan yang terhampar adalah, jamur menhir dari granit! Bila saya menyatakan seperti jamur, karena baru kali ini kami bisa melihat begitu banyak jejeran menhir. Beberapa terdapat dalam lahan pribadi yang di pakai orang sebagai lahan untuk menanam gandum. Mobil kami parkir di tempat yang telah disediakan. Dari sana kami harus berjalan sekitar 8 km untuk mencapai bukit berumput.
+
+Selama perjalanan, beberapa menhir kecil kami temukan. Tentu saja anak-anak kami heboh ! tapi semakin menjadi, karena semakin jauh, menhir yang mereka temukan semakin besar, dan berbentuk aneh-aneh.
+
+"Papa, ini pasti bukan buatan Obelix, tapi anaknya, soalnya menhirnya beda, nggak runcing, tapi ujungnya banyak yang rata, kalau menurutku ini menhir moderen ya".
+
+Bazile dengan serius menganalisa apa yang dilihatnya. Kami jadi geli, karena memang menhir di daerah Lozère kebanyakan dari granit. Dan bentuknya tak terlalu besar, seperti menhir di daerah lainnya, yang bagaikan raksasa tinggi menjulang. Tapi disuguhi peninggalan seperti ini, adalah sebuah pengetahuan yang menambah kekayaan akal manusia. Beberapa menhir yang sudah masuk dalam kenangan berupa jepretan kamera, kami tinggalkan, saatnya terus berjalan hingga mencapai bukit untuk berpiknik. Kami berada di ketinggian dengan hawa yang memenuhi paru-paru, begitu segar dan sehat. Rumput hijau dengan diselingi bunga menjadi karpet kami untuk berpiknik.
+
+Masih ada janji yang harus kami penuhi dengan anak-anak, yaitu mendatangi danau untuk memancing. Danau tempat memancing satu jalan ke arah penginapan dan tak jauh dari padang Bondons. Tapi danau tersebut rupanya tempat pemancingan. Sistim yang ditawarkan adalah 2,5 euros untuk 1 trout, tapi kami ditawarkan membayar hanya 8 euros jika ingin memancing untuk 4 trout. Kali ini, Kang Dadang, Adam dan Bazile, berhasil mendapatkan ikan besar-besar untuk makan malam nanti!
+ 
+Sebelum kembali ke rumah, David membawa kami melihat air terjun, yang katanya pernah kami datangi bertiga, 11 tahun yang lalu. Entah mengapa, saat sampai, tak sedikit pun kenangan yang keluar dari otak akan tempat menakjubkan ini. Air mancur, berkucur deras dari gunung, jatuh ke sungai, bening. Anak-anak kami lebih berhati-hati kali ini, karena tertulis banyak batu licin dan beberapa tempat terdapat air yang deras. Kami cuma menikmati dari atas bebatuan, sementara Kang Dadang, dengan tenangnya berjalan medekati air mancur, membuat kami ngeri!
+
+Pengalaman yang spektakuler bagi saya. Lengkap sudah hari itu kami melakukan wisata, saatnya pulang, karena ada empat ikan hasil pancingan yang harus segera dimasak. Malam terakhir di Lozère, saya memasak 4 ikan trout hanya dengan minyak zaitun, jeruk melon, dan taburan daun thym. Melihat tiga pria melahap dengan nikmat hasil pancingan mereka adalah kepuasan seorang ibu.
+
+Liburan terakhir kami di musim panas sangat menyenangkan. Menyatu dengan alam, mengenalkan kedua belahan jiwa dengan berbagai kehidupan di luar kebisingan kota, terlihat membuat anak-anak kami menjadi segar. Kami pun merasa berbeda, lebih tenang. Alam memang memiliki rahasia dalam memanjakan manusia...
+),
+  description: "Menhir...",
+  author: romain,
+  picture: seed_image('menhir.jpg'),
+  city: "Bretagne",
+  country: "FR",
+  status: "published"
+)
+
+Article.create!(title: "Cannes ! Di kota ini para selebritis dunia berkumpul",
+  content: %q(
+Dunia Jet set ! kata yang kerap terucap saat saya katakan akan pergi ke Cannes, dalam rangka liputan festival de cannes. Ohhh, kamu mau pergi ke Cannes untuk liputan ajang film bergengsi di sana ? selamat menikmati kehidupan gemerlap dan mengambil kesempatan bertemu para artis rupawan ya..
+Benarkah seperti itu ? selama beberapa hari saya berada di sana apa yang dituturkan oleh banyak orang benar juga ! Namun keberanan akan dunia jet set dan hebohnya suasana di Cannes, saya dapatkan memang menjadi sangat berlebihan saat festival de cannes berlangsung.
+Cannes sendiri merupakan kota kecil, hanya diduduki oleh sekitar tujuh puluh empat ribu penduduk. Kota yang berada di daerah Perancis selatan, tepatnya masuk dalam wilayah Côte d’Azur. Daerah yang sangat terkenal dengan kota-kotanya dimana, para milionaire dan celebritis dunia berlibur, menikmati pantainya yang biru, tempat hiburannya yang spektakuler, dan suasana kelas atas yang ditawarkan dari kota-kota itu sendiri.
+Dan festival de cannes itu sendiri mulai ada sejak tahun 1946, yang merupakan hasil gagasan dari Jean Zay, yang saat itu memegang jabatan sebagai menteri pendidikan dan seni budaya. Festival de cannes, adalah sebuah ajang film internasional. Di mana, karya terbaik diberikan penghargaan dari mulai penghargaan juri hingga piala Palme d’or. Setiap tahunnya festival bergengsi ini, berlangsung selama dua belas hari, dimulai pada pertengahan bulan mei. Dua puluh dua film utama yang terseleksi untuk mendapatkan Palme d’or hingga puluhan film dalam kategori lainnya dipilih oleh para juri, untuk mendapatkan penghargaan.
+Juri yang terpilih setiap tahunnya, berganti. Mereka adalah kaum perfilman. Dari artis hingga sutradara. Berasal dari berbagai negara. Mungkin pembaca masih ingat, artis berbakat indonesia, Christine Hakim, pernah dipilih sebagai salah satu juri festival pada tahun 2002. Dan tahun ini, sejumlah nama kondang seperti, Jean-Paul Gaultier, perancang mode terkenal, Dian Kruger, artis Hollywood asal jerman, namun bermain untuk berbagai negara berkat keahlian berbicara lebih dari empat bahasa dan Nani Moretti, sutradara dan aktor asal itali yang telah banyak memenangkan penghargaan internasional terpilih sebagai presiden juri. Masih banyak nama beken lainnya yang turut berpartisipasi dalam memilih karya film di festival itu.
+Mengapa begitu bergengsi ? Pertama karena industri film di Eropa, khususnya di Perancis, dinilai memiliki kriteria seni tinggi. Dan masyarakatnya-pun, sangat menghargai perfilman internasional. Bioskop di sini, masih memutarkan karya film dari negara lain yang mungkin tak diputar di beberapa negara besar. Karya film seni dari Korea, Iran, Mesir, Afrika, Brazil, Jepang dan beberapa karya negara lainnya yang tak pernah saya tonton sebelumnya, masih dapat dinikmati di Perancis. Penontonnyapun ada. Karya lokalpun selalu menyedot penonton setempat.
+Di Perancis, budaya cinema masih sangat kental. Pergi nonton sendiri ke bioskop dari mulai yang muda sampai tua, menyaksikan sebuah film sendiri, bukan hal yang aneh. Istilahnya bahkan, saat hujan turun, atau cuaca buruk, maka gedung film, akan penuh oleh penonton.
+Karena itulah, merupakan kebanggan bagi kaum film, jika karya atau akting mereka bisa masuk terseleksi dalam festival de cannes. Bisa dibayangkan para bintang film yang hadirpun dari mancanegara. Tentu saja, mereka yang tenar di Hollywoodpun akan turut memeriahkan acara film tersebut.
+Unik memang apa yang ditawarkan mata saat berlangsungnya ajang bergengsi itu. Kota telah dipenuhi oleh poster dan spanduk besar dari festival de cannes. Seolah seluruh penduduk setempat siap merayakan pesta film internasional itu. Turis yang datang juga menjadi meningkat. Dan tentunya yang membuat semakin padat kota kecil tersebut adalah, kedatangan para media, tim perfilman, para industri film, semua yang berhubungan dengan dunia film dan budaya yang datang dari mancanegara !
+Maka bagi mereka yang memang harus hadir untuk festival tersebut, sudah harus mempersiapkan akomodasi terutama penginapan sejak setengah tahun sebelumnya. Bila mencoba sebulan sebelum acara berlangsung silahkan gigit jari ! Karena semua jenis penginapan, baik berupa palais (palace) hingga hotel kecil layaknya losmen sudah penuh dipesan sejak tiga bulan sebelum ajang tersebut berlangsung.
+Tentu saja, ada yang beruntung bisa mendapatkan tempat justru saat acara telah mepet, karena seseorang yang membatalkan misalnya. Hanya harga yang ditawarkan bukan lagi harga normal, rata-rata menjadi tiga hingga empat kali lipat. Yah namanya aji mumpung, dan memang bagi mereka yang tak ada pilihan apa boleh buat menerima dengan pasrah tarif yang menjadi sangat mahal tersebut, dari pada harus menginap di luar Cannes, yang mungkin dianggap kurang praktis ! Menginap di luar Cannes ini, sebenarnya banyak dilakukan oleh para turis, selain tarif hotel lebih murah dan ketenangan bisa didapati. Rata-rata memilih dari sekitar sepuluh kilometer dari kota festival tersebut.
+Saya pribadi yang memilih bermalam di luar Cannes, sama sekali tak ada merasa repot. Bis selalu ada membawa kita hingga menuju Cannes, dan memang soal harga hotel, lumayanlah bedanya dengan penginapan di Cannes itu sendiri.
+Saatnya saya bercerita mengenai suasana yang saya rekam selama berada untuk acara seleksi film internasional tersebut.
+Saya saya sampai di kota Cannes, palais festival (gedung festival) tempat berlangsungnya acara, ketika saya masuki bagian khusus pengurusan akreditasi media dan kaum perfilman, wahhhhhh, antre-nya itu bukan main. Saya beberapa kali membuat liputan acara internasional, tapi baru kali ini melihat begitu banyaknya media yang ikut berpartisipasi. Jumlah media yang hadir tahun lalu saja mencapai hingga lima ribu jurnalis dari penjuru negara, diperkirakan tahun ini akan mendapatkan kenaikan sekitar sepuluh persen. Dan itu para media resmi yang diberikan hak liputan dari penyelenggara festival. Sementara kabar yang saya dapat, banyak juga beberapa media lainnya yang datang, secara tak resmi, karena hanya bermaksud meliput bagian luar saja dari berlangsungnya acara. Nah, mereka yang tak mendapatkan akreditasi (ijin liputan) ini, kebanyakan adalah paparazzi !
+Paparazzi itu, telah menandai tempat mereka, di pembatas jalan, seberang palais festival, tempat para celebritis berjalan di atas karpet merah yang tersohor itu. Bukan main, persiapan mereka, dari mulai tangga dua meter, kursi lipat sampai meja kecil sudah tertata, lengkap dengan kunci gembok. Kenapa ? karena semua peralatan tersebut usai acara setiap harinya akan ditinggal di tempat. Dan esoknya agar tempat yang sudah mereka jajahi itu masih utuh milik mereka, karena sudah dikunci dan tidak bisa dipindahkan.
+Padahal acara baru akan dimulai esok harinya, tapi ramainya manusia sudah membuat suasana heboh !
+Saya mencoba melihat bagian pasar film, di sana, mereka yang datang dari dunia film, sibuk mempersiapkan booth, dengan berbagai dekorasi dan poster beberapa film yang ditawarkan untuk dijual. Menarik sekali memang, melihat bagaimana, stand tersebut saling berusaha memberikan penampilan terbaiknya untuk menarik para industri film agar membeli karya atau menjalin kerjasama. Mereka yang ikut berpartisipasi datang dari seluruh penjuru dunia, dan tentunya dari Indonesiapun ikut hadir, bahkan tahun ini dua stand bagi kaum perfilman tanah air saya.
+Satu booth, merupakan kerjasama industri film Indonesia dengan pemerintah, satunya lagi kaum film muda, seperti sutradara, produser dan artis yang khusus datang mempromosikan karya mereka. Ada Putrama Tuta, sutradara film Catatan harian si Boy, Faudzan Zidni, produser Republik Twitter dan si cantik Prisia Nasution, artis peraih piala citra tahun lalu yang datang untuk memprosikan filmnya Sang Penari.
+Ketiganya datang, dengan semangat dan kepercayaan jika film indonesia mampu bersaing di dunia internasional. Juga menawarkan kerjasama pembuatan film dengan para industri film asing. Modal pribadi dan semangat terjun langsung mempromosikan karya mereka dalam festival de cannes, patutlah diacungkan jempol.
+Berbincang dengan mereka, juga sangat menyenangkan, melihat bagaimana antusias dan pikiran positif dalam berkarya membuat saya ikut merasa bangga melihat jiwa muda mereka berbicara.
+Ada satu lagi yang juga membuat saya merasa bangga. Yaitu film hitam putih karya Usmar Ismail, Lewat Djam Malam, diputar di ajang bergengsi tersebut, dalam kategori film klasik. Film yang dibuat pada tahun 1954 itu, sebenarnya telah rusak, dan berkat Kerja keras World Cinema Foundation (WCF) yang diketuai sutradara Martin Scorsese dan sejumlah lembaga lainnya berhasil merestorasi film kuno tersebut.
+Aneh sekali rasanya, maha karya peninggalan Usmar Ismail dan Asrul Sani itu, malah baru saya lihat untuk pertama kalinya di Perancis, dan bukan di Indonesia. Bangga dan haru, saat Thierry Frémaux, membuka acara pemutaran film klasik dari Indonesia itu, apalagi saat mengetahui salah satu juri festival de cannes, Alexander Payne, memilih Lewat Djam Malam, sebagai tontonan di sore hari itu ketimbang film lainnya, di situlah saya sempat ngobrol dengannya yang merupakan sutradara amerika, dimana filmnya meraih penghargaan Oscar tahun ini untuk kategori skenario terbaik.
+Usai pemutaran film, tepuk tangan tanda kekaguman pada karya film kuno dua seniman besar itu. Semua yang hadir berkata, film yang baru saja mereka tonton adalah sebuah karya maqnifique ! (hebat). Membuat saya ikut merasa bangga. Apalagi, saat membaca di beberapa surat kabar perancis, mengenai kritis positif dari film hasil penggarapan dua seniman indonesia itu.
+Kesan lain yang tergores di benak saya adalah, selama berlangsungnya festival film itu, daerah dari mulai depan palais de festival (tempat berlangsungnya acara) hingga sekitarnya, Croissette Cannes, banjir manusia. Bukan sembarang pengunjung yang datang, tapi para penggemar yang sengaja datang, menunggu, pujaan mereka, barangkali saja keluar dari hotel mewah, menuju acara. Atau jika si celebritis sedang menikmati santapan di teras hotel.
+Hotel-hotel mewah, setiap harinya selama berlangsungnya ajang bergengsi tersebut, padat oleh pengunjung, dan mereka itu dengan setia menunggu di luar hotel. Beberapa kali saya menanyakan kepada mereka, ‘sedang menunggu siapa ?’, tapi herannya, jawaban yang kerap muncul yaitu, ‘tidak tahu, menunggu saja, kali-kali saja ada artis beken yang keluar, kalau lagi mujur kan lumayan bisa melihat tampang mereka’. Walahhhh niat sekali memang, apalagi mereka itu, dengan sabarnya menanti selama berjam-jam hanya untuk seorang celebritis.
+Tapi memang heboh dan asik ternyata. Hari terakhir saya berada di sana, saya mencoba ikutan layaknya para penggemar bintang film dunia. Karena selama ini, saya selalu berkesempatan melihat langsung para celebiritis itu, di acara konferensi pers atau saat pemutaran film mereka, beruntunglah saya, meskipun untuk pengambilan foto, kesempatan itu kerap sulit didapat. Jadi sekali-kali coba turun lapangan bareng para penggemar apa salahnya.
+Benar saja, seru ! Menunggu di atas trottoir, sambil mempersiapkan kamera, mata awas setiap kali ada mobil mewah yang lewat menuju pemberhentian karpet merah. Mobil dengan kaca gelap tersebut, melaju perlahan, membuat para publik, saling menerka siapa didalam kendaraan mewah itu. Kadang ada beberapa artis, yang membuka kaca mobil mereka, melambaikan tangan memberi kesempatan kepada pengunjung untuk mengabadikan dalam kamera mereka. Membuat mereka yang hadir di sepanjang jalan, menjerit histeris !
+Dan semakin heboh, jika salah satu orang beken lebih memilih berjalan kaki menuju acara, kesempatan emas untuk melihat secara langsung gaun indah yang dikenakan sang artis dan memotretnya. Sayangnya hal itu, langka sekali dilakukan oleh kaum celebritis, meskipun jalanan yang mereka langkahi, dijaga ketat oleh para polisi dan dilindungi oleh pagar pengaman, tetap saja mereka merasa lebih nyaman baru melangkahkan kakinya tepat di atas karpet merah.
+Celebritis kelas dunia, memang membuat kagum. Cara mereka menampilkan diri layaknya sebuah iklan. Kadang tampak beberapa yang tampil alami, namun tuntutan profesi yang membuat mereka wajib menjaga hingga penampilan selalu enak dipandang, apalagi disorot oleh ribuan kamera sudah pastilah lenggak lenggok, lambaian tangan hingga senyuman teratur seapik mungkin. Gaun panjang, bahkan hingga berbuntut layaknya merak, dengan tenangnya dikenakan para artis, sambil berlenggak-lenggok.
+Berbicara soal gaun resmi para celebiritis, kami para jurnalispun diwajibkan mengenakan gaun pesta, bagi yang wanita dan smoking (jas hitam) bagi prianya, untuk setiap acara karpet merah dan pemutaran film dengan para kru film tersebut. Saya mengandalkan kebaya moderen dan selendang batik sutra saja, karena kalau harus membeli beberapa gaun, khusus untuk liputan bisa tekor sayanya…
+Satu yang saya sayangkan adalah, tak sempat melihat kehadiran Dian Sastro berjalan di atas karpet merah. Tugas saya meliput sudah selesai beberapa hari sebelum kedatangan artis cantik indonesia tersebut mewakili tanah air dari sebuah merek terkenal kosmetik.
+Soal karpet merah yang tersohor itu, setiap melihat para celebritis berjalan rasanya anggun sekali. Saya pribadi entah berapa kali menapakan kaki di atas karpet tersebut, namun dengan berjalan cepat, karena harus siap untuk rebutan tempat duduk menyaksikan sebuah film yang diputar khusus untuk para media dan kaum perfilman. Baru terpikir untuk mengabadikan diri ini, justru saat hari terakhir berada di sana.
+Spesial, itu yang bisa saya simpulkan mengenai festival de cannes. Berjalan kaki sepanjang Croissette, sambil mata tak berhenti bertemu dengan mobil mewah yang membuat lidah berdecak dan juga para publik yang hadir. Meskipun beberapa diantara mereka kedatangannya bukan untuk mengikuti acara, namun pakaian yang mereka kenakan, layaknya artis tenar saja, membuat pikiran salah tanggap, mengira mereka dalah salah satu celebritis tenar, padahal hanya pengunjung saja.
+Dan tentunya sebuah pengalaman kaya akan budaya, karena beberapa film dari berbagai negara yang saya saksikan baik untuk kompetisi atau bukan, padat sekali dengan kekayaan gambar, teknik yang cemerlang, permainan para artisnya yang memukau dan tema dari film itu sendiri yang padat dengan ide jenius.
+Bagi saya, selama di festival itu, film layaknya sebuah bahasa. Berkomunikasi dengan penontonya. Penguasaan sebuah bahasa film akan memberikan nilai yang membekas kepada penontonya, secara baik atau tidak. Semua kembali kepada selera dan keluasaan pikiran setiap individu manusia.
+),
+  description: "Cannes...",
+  author: dini,
+  picture: seed_image('cannes.jpg'),
+  city: "Cannes",
+  country: "FR",
+  status: "published"
+)
