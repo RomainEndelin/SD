@@ -33,6 +33,7 @@ gem 'file_validators'
 gem 'countries'
 
 gem 'graphql'
+gem "graphiql-rails"
 gem 'graphql-guard'
 gem 'batch-loader'
 
