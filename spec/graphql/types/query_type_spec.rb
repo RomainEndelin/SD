@@ -7,7 +7,7 @@ describe Types::QueryType do
     subject { query_type }
 
     it { is_expected.to have_field('hello').of_type('String!') }
-    it { is_expected.to have_field('articles').of_type('ArticleConnection') }
+    it { is_expected.to have_field('articles').of_type('[Article]!') }
   end
 
   describe 'resolvers' do

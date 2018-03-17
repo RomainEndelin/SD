@@ -1,4 +1,20 @@
+type Article {
+  author: User!
+  city: String
+  country: String!
+  id: ID!
+  picture: String!
+  title: String!
+}
+
 type Query {
+  articles: [Article]!
+
   # A dummy field, useful for smoke-testing GraphQL
   hello: String!
+}
+
+type User {
+  id: ID!
+  name: String!
 }

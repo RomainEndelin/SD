@@ -12,11 +12,7 @@ describe 'SuratDuniaSchema - Article' do
     %(
     query {
       articles {
-        edges {
-          node {
-            id
-          }
-        }
+        id
       }
     })
   end
@@ -25,12 +21,10 @@ describe 'SuratDuniaSchema - Article' do
     is_expected.to match_nested_array(
       {
         data: {
-          articles: {
-            edges: [
-              { node: { id: articles[0].id.to_s } },
-              { node: { id: articles[1].id.to_s } }
-            ]
-          }
+          articles: [
+            { id: articles[0].id.to_s },
+            { id: articles[1].id.to_s }
+          ]
         }
       }
     )

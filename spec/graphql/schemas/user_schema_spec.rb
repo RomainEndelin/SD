@@ -13,12 +13,8 @@ describe 'SuratDuniaSchema - User' do
     %(
     query {
       articles {
-        edges {
-          node {
-            author {
-              id
-            }
-          }
+        author {
+          id
         }
       }
     })
@@ -28,17 +24,11 @@ describe 'SuratDuniaSchema - User' do
     is_expected.to match_nested_array(
       {
         data: {
-          articles: {
-            edges: [
-              {
-                node: {
-                  author: {
-                    id: user.id.to_s
-                  }
-                }
-              }
-            ]
-          }
+          articles: [
+            author: {
+              id: user.id.to_s
+            }
+          ]
         }
       }
     )

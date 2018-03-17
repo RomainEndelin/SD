@@ -7,7 +7,7 @@ module Types
       resolve ->(_, _, _) { 'world' }
     end
 
-    connection :articles, ArticleType.connection_type do
+    field :articles, !types[Types::ArticleType] do
       resolve Resolvers::Query::Articles.new
     end
   end
