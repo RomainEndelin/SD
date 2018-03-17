@@ -1,9 +1,12 @@
 import * as React from "react"
 
+import { StyledComponentProps } from "material-ui"
 import Button from "material-ui/Button"
 import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card"
 import { withStyles } from "material-ui/styles"
 import Typography from "material-ui/Typography"
+
+import { ArticleForCard } from "../queries/__generated__/ArticleForCard"
 
 const styles = {
   card: {
@@ -14,21 +17,27 @@ const styles = {
   }
 }
 
-function ArticleCard(props) {
-  const { classes } = props
+interface IArticleProps {
+  article: ArticleForCard
+}
+
+type WrappedProps = IArticleProps & StyledComponentProps
+
+function ArticleCard(props: WrappedProps) {
+  const { article, classes } = props
   return (
     <div>
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={props.article.picture}
-          title={props.article.title}
+          image={article.picture}
+          title={article.title}
         />
         <CardContent>
           <Typography variant="headline" component="h2">
-            {props.article.city}, {props.article.country}
+            {article.city}, {article.country}
           </Typography>
-          <Typography component="p">{props.article.author.name}</Typography>
+          <Typography component="p">{article.author.name}</Typography>
         </CardContent>
         <CardActions>
           <Button size="small" color="primary">

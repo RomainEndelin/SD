@@ -1,19 +1,16 @@
 import * as React from "react"
 import { graphql, QueryProps } from "react-apollo"
 
+import { GetHello } from "../queries/__generated__/GetHello"
 import * as GET_HELLO from "../queries/get_hello.gql"
 
-interface IResponse {
-  hello: string
-}
+type WrappedProps = GetHello & QueryProps
 
-type WrappedProps = IResponse & QueryProps
-
-const AboutPage: React.StatelessComponent<IResponse> = ({ hello }) => {
+const AboutPage: React.StatelessComponent<GetHello> = ({ hello }) => {
   return <div>About page, Hello {hello}</div>
 }
 
-const withHello = graphql<IResponse, {}, WrappedProps>(GET_HELLO, {
+const withHello = graphql<GetHello, {}, WrappedProps>(GET_HELLO, {
   props: ({ data }) => ({ ...data })
 })
 export default withHello(({ loading, hello, error }) => {

@@ -1,12 +1,16 @@
-query {
+fragment ArticleForCard on Article {
+  id
+  title
+  city
+  country
+  picture
+  author {
+    name
+  }
+}
+
+query GetArticles {
   articles {
-    id
-    title
-    city
-    country
-    picture
-    author {
-      name
-    }
+    ...ArticleForCard
   }
 }

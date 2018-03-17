@@ -3,28 +3,12 @@ import { graphql, QueryProps } from "react-apollo"
 
 import ArticleCard from "../components/ArticleCard"
 
+import { GetArticles } from "../queries/__generated__/GetArticles"
 import * as GET_ARTICLES from "../queries/get_articles.gql"
 
-interface IAuthor {
-  name: string
-}
+type WrappedProps = GetArticles & QueryProps
 
-interface IArticle {
-  id: string
-  title: string
-  city: string
-  country: string
-  picture: string
-  author: IAuthor
-}
-
-interface IResponse {
-  articles: IArticle[]
-}
-
-type WrappedProps = IResponse & QueryProps
-
-const GalleryPage: React.StatelessComponent<IResponse> = ({ articles }) => {
+const GalleryPage: React.StatelessComponent<GetArticles> = ({ articles }) => {
   return (
     <div>
       {articles.map(article => (
@@ -34,7 +18,7 @@ const GalleryPage: React.StatelessComponent<IResponse> = ({ articles }) => {
   )
 }
 
-const withArticles = graphql<IResponse, {}, WrappedProps>(GET_ARTICLES, {
+const withArticles = graphql<GetArticles, {}, WrappedProps>(GET_ARTICLES, {
   props: ({ data }) => ({ ...data })
 })
 export default withArticles(({ loading, articles, error }) => {
