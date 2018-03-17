@@ -1,13 +1,10 @@
-import * as React from "react"
-import * as ReactDOM from "react-dom"
-import injectTapEventPlugin from "react-tap-event-plugin"
-import "babel-polyfill"
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import injectTapEventPlugin from "react-tap-event-plugin";
+import "babel-polyfill";
 
-import Main from "./Main"
+import Main from "./Main";
 
-injectTapEventPlugin()
+injectTapEventPlugin();
 
-ReactDOM.render(
-  <Main />,
-  document.getElementById("root")
-)
+ReactDOM.render(<Main />, document.getElementById("root"));

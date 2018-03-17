@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { ApolloProvider } from "react-apollo"
+import { ApolloProvider } from "react-apollo";
 
-import { apolloClient } from "./apollo"
-import Routes from "./Routes"
-import Header from "./components/Header"
+import { apolloClient } from "./apollo";
+import Routes from "./Routes";
+import Header from "./components/Header";
 
 export default () => {
   return (
@@ -14,5 +14,5 @@ export default () => {
         <Routes />
       </div>
     </ApolloProvider>
-  )
-}
+  );
+};

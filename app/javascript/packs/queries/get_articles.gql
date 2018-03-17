@@ -1,10 +1,10 @@
 query {
   articles {
-    id,
-    title,
-    city,
-    country,
-    picture,
+    id
+    title
+    city
+    country
+    picture
     author {
       name
     }

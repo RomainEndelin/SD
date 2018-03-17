@@ -1,9 +1,5 @@
-import * as React from "react"
+import * as React from "react";
 
 export default () => {
-  return (
-    <div>
-      Article Page
-    </div>
-  )
-}
+  return <div>Article Page</div>;
+};

@@ -1,10 +1,10 @@
-import * as React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import * as React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import GalleryPage from "./pages/GalleryPage"
-import AboutPage from "./pages/AboutPage"
-import UserPage from "./pages/UserPage"
-import ArticlePage from "./pages/ArticlePage"
+import GalleryPage from "./pages/GalleryPage";
+import AboutPage from "./pages/AboutPage";
+import UserPage from "./pages/UserPage";
+import ArticlePage from "./pages/ArticlePage";
 
 class Routes extends React.Component {
   render() {
@@ -19,8 +19,8 @@ class Routes extends React.Component {
           </Switch>
         </div>
       </Router>
-    )
+    );
   }
 }
 
-export default Routes
+export default Routes;
