@@ -1,26 +1,26 @@
-import * as React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import * as React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
-import GalleryPage from "./pages/GalleryPage";
-import AboutPage from "./pages/AboutPage";
-import UserPage from "./pages/UserPage";
-import ArticlePage from "./pages/ArticlePage";
+import AboutPage from "./pages/AboutPage"
+import ArticlePage from "./pages/ArticlePage"
+import GalleryPage from "./pages/GalleryPage"
+import UserPage from "./pages/UserPage"
 
 class Routes extends React.Component {
-  render() {
+  public render() {
     return (
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={GalleryPage} />
-            <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/users/:id" component={UserPage} />
-            <Route exact path="/article/:id" component={ArticlePage} />
+            <Route exact={true} path="/" component={GalleryPage} />
+            <Route exact={true} path="/about" component={AboutPage} />
+            <Route exact={true} path="/users/:id" component={UserPage} />
+            <Route exact={true} path="/article/:id" component={ArticlePage} />
           </Switch>
         </div>
       </Router>
-    );
+    )
   }
 }
 
-export default Routes;
+export default Routes

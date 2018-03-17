@@ -1,4 +1,9 @@
 {
+  "rules": {
+    "no-submodule-imports": false,
+    "no-implicit-dependencies": false,
+    "semicolon": [true, "never"]
+  },
   "extends": [
     "tslint:latest",
     "tslint-react",

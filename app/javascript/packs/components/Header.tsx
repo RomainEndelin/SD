@@ -1,17 +1,18 @@
-import * as React from "react";
-import { withStyles } from "material-ui/styles";
-import AppBar from "material-ui/AppBar";
-import Toolbar from "material-ui/Toolbar";
-import Typography from "material-ui/Typography";
+import * as React from "react"
+
+import AppBar from "material-ui/AppBar"
+import { withStyles } from "material-ui/styles"
+import Toolbar from "material-ui/Toolbar"
+import Typography from "material-ui/Typography"
 
 const styles = {
   root: {
     flexGrow: 1
   }
-};
+}
 
 function Header(props) {
-  const { classes } = props;
+  const { classes } = props
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -22,7 +23,7 @@ function Header(props) {
         </Toolbar>
       </AppBar>
     </div>
-  );
+  )
 }
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(Header)

@@ -1,8 +1,9 @@
-import * as React from "react";
-import { withStyles } from "material-ui/styles";
-import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card";
-import Button from "material-ui/Button";
-import Typography from "material-ui/Typography";
+import * as React from "react"
+
+import Button from "material-ui/Button"
+import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card"
+import { withStyles } from "material-ui/styles"
+import Typography from "material-ui/Typography"
 
 const styles = {
   card: {
@@ -11,10 +12,10 @@ const styles = {
   media: {
     height: 200
   }
-};
+}
 
 function ArticleCard(props) {
-  const { classes } = props;
+  const { classes } = props
   return (
     <div>
       <Card className={classes.card}>
@@ -39,7 +40,7 @@ function ArticleCard(props) {
         </CardActions>
       </Card>
     </div>
-  );
+  )
 }
 
-export default withStyles(styles)(ArticleCard);
+export default withStyles(styles)(ArticleCard)

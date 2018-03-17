@@ -1,44 +1,44 @@
-import * as React from "react";
-import { graphql, QueryProps } from "react-apollo";
+import * as React from "react"
+import { graphql, QueryProps } from "react-apollo"
 
-import ArticleCard from "../components/ArticleCard";
+import ArticleCard from "../components/ArticleCard"
 
-import * as GET_ARTICLES from "../queries/get_articles.gql";
+import * as GET_ARTICLES from "../queries/get_articles.gql"
 
-type Author = {
-  name: string;
-};
+interface IAuthor {
+  name: string
+}
 
-type Article = {
-  id: string;
-  title: string;
-  city: string;
-  country: string;
-  picture: string;
-  author: Author;
-};
+interface IArticle {
+  id: string
+  title: string
+  city: string
+  country: string
+  picture: string
+  author: IAuthor
+}
 
-type Response = {
-  articles: Article[];
-};
+interface IResponse {
+  articles: IArticle[]
+}
 
-type WrappedProps = Response & QueryProps;
+type WrappedProps = IResponse & QueryProps
 
-const GalleryPage: React.StatelessComponent<Response> = ({ articles }) => {
+const GalleryPage: React.StatelessComponent<IResponse> = ({ articles }) => {
   return (
     <div>
       {articles.map(article => (
         <ArticleCard article={article} key={article.id} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-const withArticles = graphql<Response, {}, WrappedProps>(GET_ARTICLES, {
+const withArticles = graphql<IResponse, {}, WrappedProps>(GET_ARTICLES, {
   props: ({ data }) => ({ ...data })
-});
+})
 export default withArticles(({ loading, articles, error }) => {
-  if (loading) return <div>Loading</div>;
-  if (error) return <h1>ERROR</h1>;
-  return <GalleryPage articles={articles} />;
-});
+  if (loading)  { return <div>Loading</div> }
+  if (error) { return <h1>ERROR</h1> }
+  return <GalleryPage articles={articles} />
+})

@@ -28,6 +28,8 @@
     "webpack-dev-server": "^3.1.1"
   },
   "scripts": {
-    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "tslint": "tslint -c tslint.json './app/javascript/packs/**/*.ts' './app/javascript/packs/**/*.tsx'",
+    "tslint:fix": "tslint -c tslint.json './app/javascript/packs/**/*.ts' './app/javascript/packs/**/*.tsx' --fix"
   }
 }
