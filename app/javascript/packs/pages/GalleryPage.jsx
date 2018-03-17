@@ -1,16 +1,20 @@
 import React from "react"
-import { graphql } from 'react-apollo';
+import { graphql } from 'react-apollo'
 
-import { GET_HELLO } from "../queries"
+import ArticleCard from '../components/ArticleCard'
 
-class HomePage extends React.Component {
-  render () {
+import GET_ARTICLES from "../queries/get_articles.gql"
+
+function GalleryPage({data: { loading, articles }}) {
+ if (loading) {
+    return <div>Loading...</div>;
+  } else {
     return (
       <div>
-        Gallery page, Hello {this.props.data.hello}
+        {articles.map((article) => <ArticleCard article={article} key={article.id} />)}
       </div>
     )
   }
 }
 
-export default graphql(GET_HELLO)(HomePage)
+export default graphql(GET_ARTICLES)(GalleryPage)
