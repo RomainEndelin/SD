@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import AboutPage from "./pages/AboutPage"
 import ArticlePage from "./pages/ArticlePage"
 import GalleryPage from "./pages/GalleryPage"
+import LoginPage from "./pages/LoginPage"
 import UserPage from "./pages/UserPage"
 
 class Routes extends React.Component {
@@ -13,6 +14,7 @@ class Routes extends React.Component {
         <div>
           <Switch>
             <Route exact={true} path="/" component={GalleryPage} />
+            <Route exact={true} path="/login" component={LoginPage} />
             <Route exact={true} path="/about" component={AboutPage} />
             <Route exact={true} path="/users/:id" component={UserPage} />
             <Route exact={true} path="/article/:id" component={ArticlePage} />

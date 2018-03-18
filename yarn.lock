@@ -2513,6 +2513,10 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
+final-form@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.3.1.tgz#ab6953609352fc1b1c290f8a9074197c8cc5cc93"
+
 finalhandler@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.1.0.tgz#ce0b6855b45853e791b2fcc680046d88253dd7f5"
@@ -5384,6 +5388,10 @@ react-event-listener@^0.5.1:
     fbjs "^0.8.16"
     prop-types "^15.6.0"
     warning "^3.0.0"
+
+react-final-form@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-3.1.4.tgz#de7c95d6b1a6f1cd547dd387a9c6cc8b0cb17ddb"
 
 react-jss@^8.1.0:
   version "8.3.5"
