@@ -9,6 +9,7 @@ describe Types::UserType do
 
     it { is_expected.to have_field('id').of_type('ID!') }
     it { is_expected.to have_field('name').of_type('String!') }
+    it { is_expected.to have_field('email').of_type('String!') }
   end
 
   describe 'resolvers' do
@@ -19,5 +20,6 @@ describe Types::UserType do
 
     it { is_expected.to resolve_field('id').as user.id }
     it { is_expected.to resolve_field('name').as user.name }
+    it { is_expected.to resolve_field('email').as user.email }
   end
 end

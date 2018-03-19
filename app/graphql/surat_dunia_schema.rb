@@ -2,6 +2,7 @@ SuratDuniaSchema = GraphQL::Schema.define do
   MAX_DEPTH = 10 # The connection pattern tends to increase depth rapidly
 
   query(Types::QueryType)
+  mutation(Types::MutationType)
   use GraphQL::Guard.new
   use BatchLoader::GraphQL
 

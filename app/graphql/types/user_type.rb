@@ -4,5 +4,6 @@ module Types
 
     field :id, !types.ID
     field :name, !types.String 
+    field :email, !types.String 
   end
 end

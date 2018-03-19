@@ -1,3 +1,8 @@
+input AUTH_PROVIDER_EMAIL {
+  email: String!
+  password: String!
+}
+
 type Article {
   author: User!
   city: String
@@ -7,6 +12,10 @@ type Article {
   title: String!
 }
 
+type Mutation {
+  signinUser(credentials: AUTH_PROVIDER_EMAIL!): SigninPayload
+}
+
 type Query {
   articles: [Article]!
 
@@ -14,7 +23,13 @@ type Query {
   hello: String!
 }
 
+type SigninPayload {
+  token: String
+  user: User
+}
+
 type User {
+  email: String!
   id: ID!
   name: String!
 }
