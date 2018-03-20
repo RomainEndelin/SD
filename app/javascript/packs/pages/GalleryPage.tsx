@@ -3,8 +3,8 @@ import { graphql, QueryProps } from "react-apollo"
 
 import ArticleCard from "../components/ArticleCard"
 
-import { GetArticles } from "../queries/__generated__/GetArticles"
-import * as GET_ARTICLES from "../queries/get_articles.gql"
+import { GetArticles } from "../graphql/__generated__/GetArticles"
+import * as GET_ARTICLES from "../graphql/get_articles.gql"
 
 type WrappedProps = GetArticles & QueryProps
 

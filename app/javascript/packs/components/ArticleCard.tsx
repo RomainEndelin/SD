@@ -6,7 +6,7 @@ import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card"
 import { withStyles } from "material-ui/styles"
 import Typography from "material-ui/Typography"
 
-import { ArticleForCard } from "../queries/__generated__/ArticleForCard"
+import { ArticleForCard } from "../graphql/__generated__/ArticleForCard"
 
 const styles = {
   card: {

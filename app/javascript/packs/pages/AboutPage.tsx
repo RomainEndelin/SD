@@ -1,8 +1,8 @@
 import * as React from "react"
 import { graphql, QueryProps } from "react-apollo"
 
-import { GetHello } from "../queries/__generated__/GetHello"
-import * as GET_HELLO from "../queries/get_hello.gql"
+import { GetHello } from "../graphql/__generated__/GetHello"
+import * as GET_HELLO from "../graphql/get_hello.gql"
 
 type WrappedProps = GetHello & QueryProps
 
