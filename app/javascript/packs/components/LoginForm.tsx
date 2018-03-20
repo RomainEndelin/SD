@@ -1,10 +1,27 @@
 import * as React from "react"
+import { MutationFunc } from "react-apollo"
 import { Field, Form, FormRenderProps } from "react-final-form"
 
+import { AUTH_TOKEN } from '../constants'
 import TextField from "./forms/TextField"
 
+import { SignInUser, SignInUserVariables } from "../graphql/__generated__/SignInUser"
 
-class LoginForm extends React.Component {
+interface IFormValues {
+  email: string
+  password: string
+}
+
+interface IFormErrors {
+  email?: string
+  password?: string
+}
+
+interface IProps {
+  mutate: MutationFunc<SignInUser, SignInUserVariables>
+}
+
+class LoginForm extends React.Component<IProps> {
   public render() {
     return <Form
       initialValues={{ email: '', password: '' }}
@@ -43,11 +60,23 @@ class LoginForm extends React.Component {
     </form>
   }
 
-  private onSubmit = values => {
-    // console.log(values)
+  private onSubmit = async (values: IFormValues) => {
+    const result = await this.props.mutate({
+      variables: {
+        email: values.email,
+        password: values.password,
+      }
+    })
+    const { token } = result.data.signinUser
+    this.saveUserData(token)
   }
-  private onValidate = values => {
-    const errors: {email?: string, password?: string} = {}
+
+  private saveUserData = token => {
+    localStorage.setItem(AUTH_TOKEN, token)
+  }
+
+  private onValidate = (values: IFormValues): IFormErrors => {
+    const errors: IFormErrors = {}
     if (!values.email) {
       errors.email = "Required"
     }
