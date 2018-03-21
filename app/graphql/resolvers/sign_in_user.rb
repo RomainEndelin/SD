@@ -22,8 +22,7 @@ class Resolvers::SignInUser < GraphQL::Function
     return unless user.valid_password?(input[:password])
 
     # use Ruby on Rails - ActiveSupport::MessageEncryptor, to build a token
-    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base.byteslice(0..31))
-    token = crypt.encrypt_and_sign("user-id:#{ user.id }")
+    token = JWTWrapper.encode({ user_id: user.id })
 
     OpenStruct.new({
       user: user,

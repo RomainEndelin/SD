@@ -37,6 +37,7 @@ gem "graphiql-rails"
 gem 'graphql-guard'
 gem 'batch-loader'
 
+gem 'jwt'
 gem 'devise'
 
 group :development, :test do
