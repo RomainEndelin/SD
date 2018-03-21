@@ -15,10 +15,13 @@ function Header(props) {
   const { classes } = props
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static" color="primary">
         <Toolbar>
           <Typography variant="title" color="inherit">
-            Title
+            SURAT DUNIA
+          </Typography>
+          <Typography variant="title" color="inherit">
+            MEDIA PERANTAU INDONESIA
           </Typography>
         </Toolbar>
       </AppBar>
