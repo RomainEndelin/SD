@@ -1,24 +1,23 @@
-# README
+SD - Surat Dunia, which translates from Indonesian as "News from the World".
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Getting started
 
-Things you may want to cover:
+Please bear in mind this project is still work in progress. I open-source it if viewers are interested in a full-stack Rails-React example, but I don't recommend using it for real use-case yet.
 
-* Ruby version
+## Run Rails (compile webpack as well)
 
-* System dependencies
+- `bin/rails s`
 
-* Configuration
+## Run Tests
 
-* Database creation
+- `bin/rspec`
 
-* Database initialization
+## Regenerate graphql schema
 
-* How to run the test suite
+- `bin/rails graphql:dump_schema`
+- `yarn run introspect-schema`
+- `yarn run generate-apollo-types`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Run storybook
 
-* Deployment instructions
-
-* ...
+- `yarn run storybook`
